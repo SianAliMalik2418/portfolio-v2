@@ -2,42 +2,10 @@
 
 import { Marquee } from "@/components/magicui/marquee";
 import Image from "next/image";
-
-
-// Tech Stack Data
-const techStack = [
-  // Languages
-  { name: "JavaScript", category: "language", icon: "/tech-icons/javascript.svg", color: "bg-gray-500" },
-  { name: "TypeScript", category: "language", icon: "/tech-icons/typescript.svg", color: "bg-gray-500" },
-  { name: "Java", category: "language", icon: "/tech-icons/java.svg", color: "bg-gray-500" },
-  { name: "Python", category: "language", icon: "/tech-icons/python.svg", color: "bg-gray-500" },
-  { name: "SQL", category: "language", icon: "/tech-icons/sql.svg", color: "bg-gray-500" },
-  
-  // Frameworks & Libraries
-  { name: "React.js", category: "framework", icon: "/tech-icons/react.svg", color: "bg-gray-500" },
-  { name: "Next.js", category: "framework", icon: "/tech-icons/nextjs.svg", color: "bg-gray-500" },
-  { name: "Express.js", category: "framework", icon: "/tech-icons/express.svg", color: "bg-gray-500" },
-  { name: "Node.js", category: "framework", icon: "/tech-icons/nodejs.svg", color: "bg-gray-500" },
-  { name: "FastAPI", category: "framework", icon: "/tech-icons/fastapi.svg", color: "bg-gray-500" },
-  { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind.svg", color: "bg-gray-500" },
-  
-  // Databases & Tools
-  { name: "MongoDB", category: "database", icon: "/tech-icons/mongodb.svg", color: "bg-gray-500" },
-  { name: "PostgreSQL", category: "database", icon: "/tech-icons/postgresql.svg", color: "bg-gray-500" },
-  { name: "Redis", category: "database", icon: "/tech-icons/redis.svg", color: "bg-gray-500" },
-  
-  // Developer Tools
-  { name: "Git", category: "tool", icon: "/tech-icons/Git.svg", color: "bg-gray-500" },
-  { name: "Docker", category: "tool", icon: "/tech-icons/docker.svg", color: "bg-gray-500" },
-  { name: "Azure", category: "tool", icon: "/tech-icons/Azure.svg", color: "bg-gray-500" },
-  { name: "AWS", category: "tool", icon: "/tech-icons/AWS.svg", color: "bg-gray-500" },
-  { name: "Google Cloud", category: "tool", icon: "/tech-icons/gcp.svg", color: "bg-gray-500" },
-  { name: "Jira", category: "tool", icon: "/tech-icons/Jira.svg", color: "bg-gray-500" },
-  { name: "Nix OS", category: "tool", icon: "/tech-icons/NixOS.svg", color: "bg-gray-500" },
-];
+import { skills } from "@/data/skills";
 
 interface TechIconProps {
-  tech: typeof techStack[0];
+  tech: typeof skills[0];
   className?: string;
 }
 
@@ -92,14 +60,14 @@ export default function TechStackMarquee({ className = "" }: TechStackMarqueePro
           Stack I use
         </h2>
         <p className="text-sm sm:text-base dark:text-white/70 text-black/70 leading-relaxed">
-          Technologies I work with to build products that solve real problems
+          Technologies I use to build full-stack products and production workflows
         </p>
       </div>
 
       {/* Single Marquee Container */}
       <div className="relative">
         <Marquee pauseOnHover className="[--duration:80s] [--gap:1rem]">
-          {techStack.map((tech, index) => (
+          {skills.map((tech, index) => (
             <TechIcon key={`${tech.name}-${index}`} tech={tech} />
           ))}
         </Marquee>

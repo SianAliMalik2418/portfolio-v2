@@ -7,6 +7,7 @@ import FadeIn from '@/components/FadeIn'
 import DiagonalPattern from '@/components/DiagonalPattern'
 import PageNavigation from '@/components/Navigation'
 import { Sponsor } from '@/types/sponsor'
+import { profileConfig } from '@/config/profile'
 
 interface SponsorsListClientProps {
   sponsors: Sponsor[]
@@ -35,12 +36,14 @@ export default function SponsorsListClient({ sponsors }: SponsorsListClientProps
                           Sponsors
                         </h1>
                         <p className="text-lg text-neutral-500 dark:text-neutral-400 tracking-wide">
-                          People who support my open source work
+                          People and teams supporting my engineering work
                         </p>
                       </div>
-                      <div className="shrink-0">
-                        <SponsorButton href="https://github.com/sponsors/Atharvsinh-codez" />
-                      </div>
+                      {profileConfig.socials.sponsor && (
+                        <div className="shrink-0">
+                          <SponsorButton href={profileConfig.socials.sponsor} />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -49,7 +52,7 @@ export default function SponsorsListClient({ sponsors }: SponsorsListClientProps
               <div className="sm:px-12 py-2">
                 <div className="px-4">
                   <FadeIn delay={0.3} duration={0.5}>
-                    <SponsorShowcase sponsors={sponsors} />
+                    <SponsorShowcase sponsors={sponsors} sponsorUrl={profileConfig.socials.sponsor} />
                   </FadeIn>
                 </div>
               </div>
@@ -61,4 +64,3 @@ export default function SponsorsListClient({ sponsors }: SponsorsListClientProps
     </div>
   )
 }
-

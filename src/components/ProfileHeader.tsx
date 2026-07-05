@@ -5,6 +5,7 @@ import { Moon, Sun } from 'lucide-react';
 import * as React from 'react';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import PortfolioStars from './PortfolioStars';
+import { profileConfig } from '@/config/profile';
 
 interface ProfileHeaderProps {
   name?: string
@@ -20,15 +21,11 @@ interface ProfileHeaderProps {
 }
 
 export default function ProfileHeader({
-  name = "Atharvsinh Jadav",
-  age = "15",
-  title = "Developer • Builder • Web Dev",
-  profileImage = "/pfp.jpg",
-  socialLinks = {
-    twitter: "https://x.com/athrix_codes",
-    github: "https://github.com/Atharvsinh-codez",
-    linkedin: "https://www.linkedin.com/in/atharvsinh-jadav/",
-  }
+  name = profileConfig.name,
+  age = profileConfig.age,
+  title = profileConfig.title,
+  profileImage = profileConfig.avatar,
+  socialLinks = profileConfig.socials
 }: ProfileHeaderProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
@@ -54,7 +51,7 @@ export default function ProfileHeader({
             {name}
           </h1>
           <p className="opacity-40 text-xs sm:text-sm">
-            {age} • {title}
+            {[age, title].filter(Boolean).join(' • ')}
           </p>
         </div>
         <div className="flex justify-start gap-1 sm:gap-2 mt-3 sm:mt-0 px-0">

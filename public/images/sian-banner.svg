@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">Sian Malik portfolio banner</title>
+  <desc id="desc">Abstract technical banner for a full-stack software engineer.</desc>
+  <rect width="1600" height="520" fill="#0f172a"/>
+  <path d="M0 390C220 300 360 430 570 320C790 205 980 255 1160 145C1320 48 1460 60 1600 20V520H0Z" fill="#0d9488" opacity="0.7"/>
+  <path d="M0 120C210 190 370 62 560 155C760 255 930 120 1130 220C1320 315 1485 220 1600 250V0H0Z" fill="#2563eb" opacity="0.65"/>
+  <g fill="none" stroke="#e5e7eb" stroke-opacity="0.18">
+    <path d="M140 100h240v120H140zM520 280h300v110H520zM1010 90h330v150h-330z"/>
+    <path d="M380 160h140M820 335h190M1340 165h140"/>
+  </g>
+  <text x="96" y="420" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#ffffff">Sian Malik</text>
+  <text x="96" y="466" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#cbd5e1">Full-stack software engineer</text>
+</svg>

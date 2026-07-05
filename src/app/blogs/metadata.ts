@@ -1,16 +1,17 @@
 import { Metadata } from 'next'
+import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
-  title: 'Blog | Atharvsinh Jadav',
-  description: 'Technical writings and thoughts on web development, AI, and more.',
+  title: `Blog | ${siteConfig.legalName}`,
+  description: 'Technical writings and notes on full-stack engineering.',
   openGraph: {
-    title: 'Blog | Atharvsinh Jadav',
-    description: 'Technical writings and thoughts on web development, AI, and more.',
+    title: `Blog | ${siteConfig.legalName}`,
+    description: 'Technical writings and notes on full-stack engineering.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | Atharvsinh Jadav',
-    description: 'Technical writings and thoughts on web development, AI, and more.',
+    title: `Blog | ${siteConfig.legalName}`,
+    description: 'Technical writings and notes on full-stack engineering.',
   }
 } 

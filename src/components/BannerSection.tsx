@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { profileConfig } from '@/config/profile'
 
 interface BannerSectionProps {
   quote?: string
@@ -8,8 +9,8 @@ interface BannerSectionProps {
 }
 
 export default function BannerSection({
-  quote = "You make your own luck if you stay at it long enough.",
-  bannerImage = "/banner.jpg"
+  quote = profileConfig.heroQuote,
+  bannerImage = profileConfig.bannerImage
 }: BannerSectionProps) {
   return (
     <div className="w-full mb-2 relative">

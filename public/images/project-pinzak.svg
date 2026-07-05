@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pinzak project cover</title>
+  <desc id="desc">Project cover for an AI performance marketing platform.</desc>
+  <rect width="1200" height="900" fill="#0f172a"/>
+  <rect x="100" y="110" width="1000" height="680" rx="40" fill="#f8fafc"/>
+  <rect x="160" y="180" width="300" height="540" rx="24" fill="#111827"/>
+  <path d="M540 670V390M690 670V280M840 670V470M990 670V240" stroke="#2563eb" stroke-width="42" stroke-linecap="round"/>
+  <path d="M540 390C650 320 730 530 840 470C920 425 930 290 990 240" fill="none" stroke="#14b8a6" stroke-width="18" stroke-linecap="round"/>
+  <text x="160" y="848" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#ffffff">Pinzak</text>
+  <text x="160" y="680" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#ffffff">Campaign analytics</text>
+</svg>

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { profileConfig } from '@/config/profile'
 
 interface CallToActionProps {
   profileImage?: string
@@ -11,11 +12,11 @@ interface CallToActionProps {
 }
 
 export default function CallToAction({
-  profileImage = "/pfp.jpg",
-  profileAlt = "Profile",
-  linkText = "Book a Free Call",
-  linkUrl = "https://cal.com/atharvsinh/15min",
-  preText = "If you've read this far, you might be interested in what I do."
+  profileImage = profileConfig.avatar,
+  profileAlt = profileConfig.name,
+  linkText = profileConfig.cta.linkText,
+  linkUrl = profileConfig.cta.linkUrl,
+  preText = profileConfig.cta.preText
 }: CallToActionProps) {
 
   return (
@@ -115,10 +116,10 @@ export default function CallToAction({
 
         <div className="relative z-10 pt-6 sm:pt-8">
           <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg italic font-[family-name:var(--font-instrument-serif)] mb-4">
-            &quot;Man is made by his belief. As he believes, so he is.&quot;
+            &quot;{profileConfig.cta.quote}&quot;
           </p>
           <p className="text-right text-neutral-800 dark:text-neutral-200 font-medium">
-            — Bhagavad Gita
+            - {profileConfig.cta.quoteSource}
           </p>
         </div>
       </div>

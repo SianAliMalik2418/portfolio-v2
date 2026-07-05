@@ -2,6 +2,7 @@ import { getProjectById, getAllProjects } from '@/data/projects'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import ProjectDetailClient from '@/components/ProjectDetailClient'
+import { siteConfig } from '@/config/site'
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${project.title} | Atharvsinh Jadav`,
+    title: `${project.title} | ${siteConfig.legalName}`,
     description: project.description,
     openGraph: {
       title: project.title,

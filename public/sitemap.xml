@@ -1,58 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Main Pages -->
   <url>
-    <loc>https://www.athrix.me/</loc>
-    <lastmod>2026-01-03</lastmod>
+    <loc>https://sianalimalik.com/</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.athrix.me/open-graph.png</image:loc>
-      <image:title>Atharvsinh Jadav - Portfolio</image:title>
+      <image:loc>https://sianalimalik.com/images/sian-open-graph.svg</image:loc>
+      <image:title>Sian Ali Malik - Portfolio</image:title>
     </image:image>
   </url>
-  
   <url>
-    <loc>https://www.athrix.me/projects</loc>
-    <lastmod>2026-01-03</lastmod>
+    <loc>https://sianalimalik.com/projects</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Individual Project Pages -->
   <url>
-    <loc>https://www.athrix.me/projects/agenv</loc>
-    <lastmod>2026-01-03</lastmod>
+    <loc>https://sianalimalik.com/blogs</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sianalimalik.com/projects/attendance-management-system</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.athrix.me/images/agenv.png</image:loc>
-      <image:title>AgenV - AI Image Generation</image:title>
+      <image:loc>https://sianalimalik.com/images/project-attendance.svg</image:loc>
+      <image:title>Attendance Management System</image:title>
     </image:image>
   </url>
-  
   <url>
-    <loc>https://www.athrix.me/projects/typegpt</loc>
-    <lastmod>2026-01-03</lastmod>
+    <loc>https://sianalimalik.com/projects/pinzak</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.athrix.me/images/typegpt.png</image:loc>
-      <image:title>TypeGPT - Unified AI API</image:title>
+      <image:loc>https://sianalimalik.com/images/project-pinzak.svg</image:loc>
+      <image:title>Pinzak</image:title>
     </image:image>
   </url>
-  
   <url>
-    <loc>https://www.athrix.me/projects/codedevs</loc>
-    <lastmod>2026-01-03</lastmod>
+    <loc>https://sianalimalik.com/projects/nearo</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.athrix.me/images/codedevs.png</image:loc>
-      <image:title>CodeDevs - AI Portfolio Generator</image:title>
+      <image:loc>https://sianalimalik.com/images/project-nearo.svg</image:loc>
+      <image:title>Nearo</image:title>
     </image:image>
   </url>
-  
 </urlset>

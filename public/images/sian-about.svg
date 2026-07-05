@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="768" viewBox="0 0 768 768" role="img" aria-labelledby="title desc">
+  <title id="title">Sian Malik about image</title>
+  <desc id="desc">Abstract portrait card for Sian Malik.</desc>
+  <rect width="768" height="768" rx="48" fill="#f8fafc"/>
+  <rect x="72" y="72" width="624" height="624" rx="40" fill="#111827"/>
+  <circle cx="525" cy="214" r="118" fill="#2563eb"/>
+  <circle cx="255" cy="520" r="156" fill="#14b8a6"/>
+  <path d="M168 258h250M168 320h170M168 382h310" stroke="#ffffff" stroke-width="28" stroke-linecap="round" opacity="0.9"/>
+  <text x="384" y="596" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" fill="#ffffff">SM</text>
+</svg>

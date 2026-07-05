@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from 'lucide-react'
 import { fallbackContributions } from '@/lib/github'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
+import { githubConfig } from '@/config/github'
 
 interface Contribution {
   title: string
@@ -29,7 +30,7 @@ export default function OpenSourceContributionsCard() {
       try {
         setLoading(true)
 
-        const response = await fetch('/api/github-contributions?username=Atharvsinh-codez&limit=50')
+        const response = await fetch(`/api/github-contributions?username=${githubConfig.username}&limit=${githubConfig.contributionLimit}`)
         const data = await response.json()
 
         if (data.success && data.contributions.length > 0) {

@@ -1,63 +1,48 @@
-import { FAQ } from '@/types/blog'
+import { FAQ } from "@/types/blog";
 
 export const faqs: FAQ[] = [
   {
-    id: 'ai-as-tool',
-    question: 'How I Use AI as a Tool, Not a Crutch',
-    answer: `AI is not my replacement — it's my force multiplier.
+    id: "shipping-full-stack-products",
+    question: "How I Approach Full-Stack Product Delivery",
+    answer: `I like owning the full path from product requirements to deployment.
 
-I use AI for:
-• Exploring approaches
-• Writing boilerplate
-• Stress-testing ideas
+For me that means:
+- clarifying the workflow before writing code
+- choosing boring, maintainable architecture
+- keeping frontend and backend contracts explicit
+- deploying early enough to catch integration problems
 
-But I never let it:
-• Decide architecture blindly
-• Hide things I don't understand
-• Replace debugging and reasoning
-
-If I can't explain a piece of code in simple words, it doesn't go into production.
-
-Using AI this way helps me move faster without losing control — and keeps my skills sharp.`
+That approach helped me ship client dashboards, internal tools, authentication flows, payment flows, and reporting systems without treating deployment as an afterthought.`,
   },
   {
-    id: 'learning-new-tech',
-    question: 'How I Learn New Tech Without Getting Overwhelmed',
-    answer: `I don't try to learn everything — I learn just enough to build something real.
+    id: "api-integrations",
+    question: "What I Have Learned From Third-Party API Integrations",
+    answer: `Integrating APIs from platforms like Google, Meta, TikTok, Shopify, Walmart, and Amazon taught me that the hard part is rarely the first successful request.
 
-Instead of watching endless tutorials, I pick a small problem and start coding immediately. When I get stuck, I learn exactly what's needed to move forward — nothing more.
+The real work is handling auth, rate limits, unstable payloads, retries, mapping external data into your own model, and giving users a clear experience when an upstream platform fails.
 
-My rule is simple:
-• Build first
-• Learn on demand
-• Refine after
-
-This keeps learning practical, focused, and sustainable. Over time, small projects compound into real understanding — without burnout.`
+Good integrations are defensive, observable, and easy to reason about.`,
   },
   {
-    id: 'confusion-to-clarity',
-    question: 'How I Turn Confusion Into Clear, Working Systems',
-    answer: `Most problems look complicated at first because they're poorly defined, not because they're hard.
+    id: "clean-maintainable-code",
+    question: "Why I Care About Maintainable Code",
+    answer: `A product only moves fast for a short time if the codebase is hard to change.
 
-When I feel stuck, I slow down and:
-• Write the problem in plain English
-• Break it into the smallest possible steps
-• Solve one piece at a time
+I try to keep code maintainable by:
+- naming data and flows clearly
+- isolating business logic from UI details
+- keeping types close to the contracts they protect
+- removing cleverness that does not pay rent
 
-Clarity comes from structure.
+The goal is simple: future changes should feel controlled, not risky.`,
+  },
+];
 
-Once the system makes sense in my head, the code usually follows naturally.
-
-This mindset helps me debug faster, design better systems, and stay calm even when things get messy.`
-  }
-]
-
-// Alias for blogs page compatibility
-export const blogs = faqs
+export const blogs = faqs;
 
 export const getFAQById = (id: string): FAQ | undefined => {
-  return faqs.find(faq => faq.id === id)
-}
+  return faqs.find((faq) => faq.id === id);
+};
 
-// Alias for blog pages
-export const getBlogById = getFAQById
+export const getBlogById = getFAQById;
+

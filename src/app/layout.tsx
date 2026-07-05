@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { ScrollToTop } from "@/components/ui/ScrollAnimations"
 import GradualBlur from "@/components/GradualBlur"
+import { siteConfig } from "@/config/site"
 
 const hkGrotesk = Hanken_Grotesk({
   weight: ['400'],
@@ -22,19 +23,24 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.athrix.me'),
-  title: 'Atharvsinh Jadav',
-  description: 'I build products that solve real problems. Available for new opportunities.',
+  metadataBase: new URL(siteConfig.baseUrl),
+  title: siteConfig.legalName,
+  description: siteConfig.description,
+  verification: siteConfig.verification.google
+    ? {
+        google: siteConfig.verification.google,
+      }
+    : undefined,
   openGraph: {
-    url: 'https://www.athrix.me/',
-    siteName: 'Atharvsinh Jadav Portfolio',
-    locale: 'en_US',
+    url: siteConfig.baseUrl,
+    siteName: `${siteConfig.legalName} Portfolio`,
+    locale: siteConfig.locale,
     type: 'website',
     images: [{
-      url: '/open-graph.png',
+      url: siteConfig.ogImage,
       width: 1200,
       height: 630,
-      alt: 'Atharvsinh Jadav - Portfolio'
+      alt: `${siteConfig.legalName} - Portfolio`
     }],
   },
 };
@@ -46,9 +52,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="google-site-verification" content="tMCNs2fgM6voEHBd3JsySffMFSiUCQDEFEF1iYI3-ZQ" />
-      </head>
       <body className={`${hkGrotesk.className} ${instrumentSerif.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
@@ -69,12 +72,14 @@ export default function RootLayout({
           />
           <ScrollToTop />
         </ThemeProvider>
-        <script
-          src="https://cdn.databuddy.cc/databuddy.js"
-          data-client-id="2cYj0B5Uv0T4q70DhnoAc"
-          data-enable-batching="true"
-          async
-        ></script>
+        {siteConfig.analytics.databuddyClientId && (
+          <script
+            src="https://cdn.databuddy.cc/databuddy.js"
+            data-client-id={siteConfig.analytics.databuddyClientId}
+            data-enable-batching="true"
+            async
+          ></script>
+        )}
       </body>
     </html>
   );

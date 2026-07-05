@@ -4,6 +4,7 @@ import { Sponsor } from '@/types/sponsor';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heart, ArrowUpRight } from 'lucide-react';
+import { profileConfig } from '@/config/profile';
 
 interface SponsorShowcaseProps {
   sponsors: Sponsor[];
@@ -14,7 +15,7 @@ interface SponsorShowcaseProps {
 export default function SponsorShowcase({
   sponsors,
   className = '',
-  sponsorUrl = 'https://github.com/sponsors/Atharvsinh-codez'
+  sponsorUrl = profileConfig.socials.sponsor
 }: SponsorShowcaseProps) {
   if (sponsors.length === 0) {
     return (
@@ -25,24 +26,26 @@ export default function SponsorShowcase({
               <Heart className="w-8 h-8 text-neutral-400 dark:text-neutral-500" />
             </div>
             <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mb-6">
-              Be the first to sponsor this project
+              Sponsorship details are not available yet.
             </p>
-            <Link
-              href={sponsorUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm sm:text-base font-medium transition-all hover:bg-zinc-800 dark:hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
-              style={{
-                WebkitTapHighlightColor: 'transparent',
-                WebkitTouchCallout: 'none',
-                WebkitUserSelect: 'none',
-                userSelect: 'none'
-              }}
-            >
-              <Heart className="w-4 h-4 fill-current" />
-              Sponsor Me
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            {sponsorUrl && (
+              <Link
+                href={sponsorUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm sm:text-base font-medium transition-all hover:bg-zinc-800 dark:hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
+                style={{
+                  WebkitTapHighlightColor: 'transparent',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
+                <Heart className="w-4 h-4 fill-current" />
+                Sponsor Me
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -113,4 +116,3 @@ export default function SponsorShowcase({
     </div>
   );
 }
-

@@ -196,28 +196,28 @@ export async function fetchRepositoryStars(owner: string, repo: string): Promise
 // Fallback data in case API fails
 export const fallbackContributions: ProcessedContribution[] = [
   {
-    title: "feat(mem0): add complete mcp server with mem0 API integration",
-    description: "Added mem0 MCP integration to the Klavis AI ecosystem, contributing to tools that other developers actually use.",
-    repository: "Klavis-AI",
-    link: "https://github.com/Klavis-AI/klavis/pull/251",
+    title: "Full-stack product delivery",
+    description: "Built and shipped production applications with React, Next.js, TypeScript, Node.js, Express, MongoDB, and PostgreSQL.",
+    repository: "Whitebox",
+    link: "https://github.com/SianAliMalik2418",
     date: "2025",
     type: "feature",
     state: "merged"
   },
   {
-    title: "feat: add express.js support to CLI",
-    description: "Added express.js support to the billingsdk CLI, contributing to tools that other developers actually use.",
-    repository: "dodopayments",
-    link: "https://github.com/dodopayments/billingsdk/pull/103",
+    title: "Third-party analytics integrations",
+    description: "Integrated Google, Meta, TikTok, Shopify, Walmart, and Amazon APIs for analytics and reporting dashboards.",
+    repository: "Client Platforms",
+    link: "https://github.com/SianAliMalik2418",
     date: "2025",
     type: "feature",
     state: "merged"
   },
   {
-    title: "feat: interactive component playground",
-    description: "Added an interactive component playground to the Dodopayments billingsdk.",
-    repository: "dodopayments",
-    link: "https://github.com/dodopayments/billingsdk/pull/96",
+    title: "Internal operations automation",
+    description: "Built an internal attendance and reporting tool to reduce manual HR and management coordination.",
+    repository: "Whitebox",
+    link: "https://github.com/SianAliMalik2418",
     date: "2025",
     type: "feature",
     state: "merged"

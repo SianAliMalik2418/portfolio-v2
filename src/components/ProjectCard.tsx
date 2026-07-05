@@ -5,35 +5,14 @@ import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-import Video from "next-video";
 import { ProjectNavigation } from './ProjectNavigation';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
-import codedevs from '/videos/codedevs.mp4';
-import agenv from '/videos/agenv.mp4';
-import typegpt from '/videos/typegpt.mp4';
-import obsidianui from '/videos/obsidianui.mp4';
 
 interface ProjectCardProps {
   project: Project;
   isDetailed?: boolean;
   allProjects?: Project[];
 }
-
-// Map video IDs to imported video assets
-const getVideoSource = (videoId: string) => {
-  switch (videoId) {
-    case 'codedevs':
-      return codedevs;
-    case 'agenv':
-      return agenv;
-    case 'typegpt':
-      return typegpt;
-    case 'obsidianui':
-      return obsidianui;
-    default:
-      return null;
-  }
-};
 
 export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: ProjectCardProps) => {
 
@@ -128,20 +107,7 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
 
       {/* Media Section - Fixed Container */}
       <div className="mb-6 sm:mb-8">
-        {project.video && getVideoSource(project.video) ? (
-          <div className="w-full aspect-video rounded-lg overflow-hidden">
-            <Video
-              src={getVideoSource(project.video)!}
-              poster={project.image}
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              autoPlay
-              muted
-              loop
-            />
-          </div>
-        ) : project.image && (
+        {project.image ? (
           <div className="w-full aspect-4/3 relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5">
             <Image
               src={project.image}
@@ -154,6 +120,8 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
               priority
             />
           </div>
+        ) : (
+          <div className="w-full aspect-4/3 rounded-lg overflow-hidden bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-300 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-700" />
         )}
       </div>
 

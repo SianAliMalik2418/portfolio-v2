@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Nearo project cover</title>
+  <desc id="desc">Project cover for a daily semantic word game.</desc>
+  <rect width="1200" height="900" fill="#ecfeff"/>
+  <rect x="180" y="140" width="840" height="620" rx="42" fill="#111827"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" text-anchor="middle">
+    <rect x="300" y="250" width="120" height="120" rx="20" fill="#14b8a6"/><text x="360" y="330" fill="#fff">N</text>
+    <rect x="455" y="250" width="120" height="120" rx="20" fill="#2563eb"/><text x="515" y="330" fill="#fff">E</text>
+    <rect x="610" y="250" width="120" height="120" rx="20" fill="#334155"/><text x="670" y="330" fill="#fff">A</text>
+    <rect x="765" y="250" width="120" height="120" rx="20" fill="#334155"/><text x="825" y="330" fill="#fff">R</text>
+  </g>
+  <path d="M330 540h540" stroke="#94a3b8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M330 610h370" stroke="#14b8a6" stroke-width="22" stroke-linecap="round"/>
+  <text x="180" y="838" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#111827">Nearo</text>
+</svg>

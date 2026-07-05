@@ -2,6 +2,7 @@ import { getBlogById } from '@/data/blogs'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import BlogPostClient from '@/components/BlogPostClient'
+import { siteConfig } from '@/config/site'
 
 type Props = {
   params: Promise<{ id: string }>
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${blog.question} | Atharvsinh Jadav`,
+    title: `${blog.question} | ${siteConfig.legalName}`,
     description: blog.answer.substring(0, 150),
     openGraph: {
       title: blog.question,

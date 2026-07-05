@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Play, Pause } from 'lucide-react'
+import { musicConfig } from '@/data/music'
 
 interface SpotifyPlayerProps {
     trackUrl?: string
@@ -13,11 +14,11 @@ interface SpotifyPlayerProps {
 }
 
 export default function SpotifyPlayer({
-    trackUrl = 'https://open.spotify.com/track/5VIDhfflRT4rT0TWpy9LXN',
-    albumArt = 'https://i.scdn.co/image/ab67616d00001e02283dc1c25ba3030b0030f1bc',
-    songName = 'Tum Prem Ho',
-    artists = 'Mohit Lalwani',
-    audioSrc = '/audio/TumPremHo.mp3'
+    trackUrl = musicConfig.trackUrl,
+    albumArt = musicConfig.albumArt,
+    songName = musicConfig.songName,
+    artists = musicConfig.artists,
+    audioSrc = musicConfig.audioSrc
 }: SpotifyPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
@@ -71,6 +72,7 @@ export default function SpotifyPlayer({
     }, [])
 
     const togglePlay = async () => {
+        if (!audioSrc) return
         const audio = audioRef.current
         if (!audio) return
 
@@ -118,7 +120,7 @@ export default function SpotifyPlayer({
 
     return (
         <div className="w-full">
-            <audio ref={audioRef} src={audioSrc} preload="auto" />
+            {audioSrc && <audio ref={audioRef} src={audioSrc} preload="auto" />}
 
             {/* Main Card */}
             <div className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 sm:p-6">
@@ -153,9 +155,9 @@ export default function SpotifyPlayer({
 
                         {/* Song Title - Clickable */}
                         <a
-                            href={trackUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={trackUrl || undefined}
+                            target={trackUrl ? "_blank" : undefined}
+                            rel={trackUrl ? "noopener noreferrer" : undefined}
                             className="font-semibold text-black dark:text-white text-base hover:underline cursor-pointer block"
                         >
                             {songName}
@@ -168,17 +170,19 @@ export default function SpotifyPlayer({
                     </div>
 
                     {/* Play/Pause Button */}
-                    <button
-                        onClick={togglePlay}
-                        className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500 transition-all bg-white dark:bg-neutral-800 cursor-pointer hover:scale-105 active:scale-95"
-                        aria-label={isPlaying ? 'Pause' : 'Play'}
-                    >
-                        {isPlaying ? (
-                            <Pause className="w-5 h-5 text-neutral-800 dark:text-white" fill="currentColor" />
-                        ) : (
-                            <Play className="w-5 h-5 text-neutral-800 dark:text-white ml-0.5" fill="currentColor" />
-                        )}
-                    </button>
+                    {audioSrc && (
+                        <button
+                            onClick={togglePlay}
+                            className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500 transition-all bg-white dark:bg-neutral-800 cursor-pointer hover:scale-105 active:scale-95"
+                            aria-label={isPlaying ? 'Pause' : 'Play'}
+                        >
+                            {isPlaying ? (
+                                <Pause className="w-5 h-5 text-neutral-800 dark:text-white" fill="currentColor" />
+                            ) : (
+                                <Play className="w-5 h-5 text-neutral-800 dark:text-white ml-0.5" fill="currentColor" />
+                            )}
+                        </button>
+                    )}
                 </div>
 
                 {/* Expanded Player - Progress Bar */}

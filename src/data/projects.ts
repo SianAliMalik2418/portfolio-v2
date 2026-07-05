@@ -1,90 +1,47 @@
-import { Project } from '@/types/project'
+import { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
-    id: "obsidianui",
-    title: "ObsidianUI",
-    description: "ObsidianUI empowers developers to build premium, motion-rich interfaces with ease. Transform your raw ideas into compelling visuals.",
-    longDescription: "Founder of this project\n\nObsidianUI empowers developers to build premium, motion-rich interfaces with ease. Transform your raw ideas into compelling visuals.",
-    liveLink: "https://obsidianui.dev",
-    githubLink: "https://github.com/Atharvsinh-codez/ObsidianUI",
-    video: "obsidianui",
-    image: "/images/obsidianui.png",
-    tags: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Next.js"
-    ],
+    id: "attendance-management-system",
+    title: "Attendance Management System",
+    description:
+      "A full HR suite with admin and employee portals for attendance, leaves, work-from-home, hybrid scheduling, working hours, events, posts, documents, and employee management.",
+    longDescription:
+      "Full HR Suite\n\nBuilt a complete HR platform with separate admin and employee portals covering attendance, leaves, work-from-home, hybrid scheduling, working hours, events, posts, documents, and employee management.\n\nDesigned role-based access control to separate admin and employee permissions across the system.\n\nImplemented complex scheduling and time-tracking logic to handle hybrid work, working hours, and leave calculations.\n\nStarted as the sole frontend and backend developer, then onboarded and mentored two junior backend developers and led their work through delivery.",
+    image: "/images/project-attendance.svg",
+    tags: ["Vite", "TypeScript", "Express", "MongoDB", "RBAC"],
+    date: "2025",
   },
   {
-    id: "agenv",
-    title: "AgenV",
-    description: "AgenV lets you create limitless, high-quality images with the power of AI. Unleash your creativity and generate visuals in seconds, all without any design skills required.",
-    longDescription: "Founder of this project\n\nAgenV lets you create limitless, high-quality images with the power of AI. Unleash your creativity and generate visuals in seconds, all without any design skills required.\n\nWhy Choose AgenV?\n\n• High Quality - Professional-grade images suitable for any project or purpose\n\n• Multiple Styles - Choose from various artistic styles and customize your creations\n\n• Lightning Fast - Generate stunning images in seconds with our optimized AI models",
-    liveLink: "https://www.agenv.tech",
-    video: "agenv",
-    image: "/images/agenv.png",
-    tags: [
-      "Next.js",
-      "React 19",
-      "TypeScript",
-      "UploadThing",
-      "Prisma",
-      "Base UI",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Tanstack Query",
-      "Better Auth"
-    ],
+    id: "pinzak",
+    title: "Pinzak",
+    description:
+      "An AI performance marketing platform with a marketing site and client dashboard for campaign analytics and reporting.",
+    longDescription:
+      "AI Performance Marketing Platform\n\nBuilt both the marketing website and the client dashboard for a performance marketing platform end to end.\n\nIntegrated third-party APIs from Google, Meta, and TikTok to pull campaign and analytics data into a unified dashboard.\n\nDeveloped data visualizations and reporting views to surface campaign performance metrics for clients.",
+    liveLink: "https://pinzak.com",
+    image: "/images/project-pinzak.svg",
+    tags: ["Next.js", "TypeScript", "Express", "PostgreSQL", "Prisma"],
+    date: "2025",
   },
   {
-    id: "typegpt",
-    title: "TypeGPT",
-    description: "Unified API access to 200+ cutting-edge AI models. Build smarter applications with zero complexity. Access OpenAI, DeepSeek, Qwen, Meta, Mistral, GLM, MiniMax, Kimi and 200+ models through a single, unified API endpoint.",
-    longDescription: "Co-Founder, Manager of this project\n\nUnified API access to 200+ cutting-edge AI models. Build smarter applications with zero complexity.\n\nAccess OpenAI, DeepSeek, Qwen, Meta, Mistral, GLM, MiniMax, Kimi and 200+ models through a single, unified API endpoint.\n\nOne API for every AI model.",
-    liveLink: "https://typegpt.ai",
-    video: "typegpt",
-    image: "/images/typegpt.png",
-    tags: [
-      "Next.js",
-      "React 19",
-      "TypeScript",
-      "UploadThing",
-      "Prisma",
-      "Base UI",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Tanstack Query",
-      "Better Auth"
-    ],
-  },
-  {
-    id: "codedevs",
-    title: "Code Devs",
-    description: "AI-powered portfolio generator that automatically creates beautiful developer portfolios from GitHub profiles. Turn your GitHub into a stunning portfolio, powered by AI.",
-    longDescription: "Founder of this project\n\nCodeDevs is an AI-powered portfolio generator that automatically creates beautiful developer portfolios from GitHub profiles. It fetches your GitHub data, uses AI to generate professional summaries and highlights, and presents everything in a modern, responsive portfolio website.\n\nFeatures:\n• Automatic Portfolio Generation - Enter any GitHub username and get a fully-featured portfolio instantly\n• AI-Powered Content - Uses Groq AI to generate professional summaries, highlights, and SEO-optimized descriptions\n• GitHub Integration - Fetches profile data, repositories, contribution graphs, and project statistics via GitHub GraphQL API\n• SEO Optimized - Dynamic metadata generation for better search engine visibility\n• Responsive Design - Works perfectly on all devices with dark mode support",
-    liveLink: "https://codedevs.agenv.tech",
-    video: "codedevs",
-    image: "/images/codedevs.png",
-    tags: [
-      "Next.js 16",
-      "TypeScript",
-      "Tailwind CSS",
-      "Shadcn/ui",
-      "Vercel AI SDK",
-      "Groq",
-      "Neon Database",
-      "GitHub GraphQL API"
-    ],
+    id: "nearo",
+    title: "Nearo",
+    description:
+      "A Semantle-style daily word-guessing game using GloVe word embeddings to score guesses by semantic similarity.",
+    longDescription:
+      "Daily Word-Guessing Game\n\nBuilt a Semantle-style daily word game using GloVe word embeddings to score guesses by semantic similarity.\n\nDesigned an offline preprocessing pipeline in Python to precompute static score files, keeping the live game fast and fully client-side.\n\nServed puzzle data from Cloudflare R2 and ran a lightweight Workers backend, with game state persisted in localStorage.",
+    liveLink: "https://portlyy.com/games/nearo",
+    image: "/images/project-nearo.svg",
+    tags: ["TanStack Start", "React", "Vite", "Cloudflare Workers", "R2", "Tailwind CSS"],
+    date: "2025",
   },
 ];
 
 export const getProjectById = (id: string): Project | undefined => {
-  return projects.find(project => project.id === id)
-}
+  return projects.find((project) => project.id === id);
+};
 
 export const getAllProjects = (): Project[] => {
-  return projects
-}
+  return projects;
+};

@@ -5,36 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
-
-interface ExperienceItem {
-  company: string;
-  position: string;
-  duration: string;
-  description: string;
-  achievements?: string[];
-  href?: string;
-  logoUrl?: string;
-}
+import { experiences } from '@/data/experience'
 
 export default function ExperienceContent() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
-
-  const experiences: ExperienceItem[] = [
-    {
-      company: "A4F",
-      position: "AI Model Manager & Project Lead",
-      duration: "September 2025 – December 2025",
-      description: "Managing cutting-edge AI models including OpenAI GPT-5 and Claude Opus 4.5. Overseeing project management, community engagement, and full website development and maintenance.",
-      achievements: [
-        "Providing and managing access to latest AI models including OpenAI GPT-5, Claude Opus 4.5, and other frontier models.",
-        "Leading project management initiatives and coordinating development efforts across the platform.",
-        "Managing and growing the A4F community, ensuring active engagement and user support.",
-        "Developing and maintaining the full A4F website, implementing new features and optimizations.",
-      ],
-      href: "https://a4f.co",
-      logoUrl: "/a4f.png",
-    },
-  ]
 
   const toggleExpanded = (company: string) => {
     setExpanded(prev => ({

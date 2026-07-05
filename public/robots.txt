@@ -1,13 +1,9 @@
-# Robots.txt for Atharvsinh Jadav Portfolio
+# Robots.txt for Sian Ali Malik Portfolio
 User-agent: *
 Allow: /
 
-# Disallow admin or private areas
 Disallow: /api/
 Crawl-delay: 1
 
-# Sitemaps
-Sitemap: https://www.athrix.me/sitemap.xml
-
-# Host declaration (helps with canonicalization)
-Host: https://www.athrix.me
+Sitemap: https://sianalimalik.com/sitemap.xml
+Host: https://sianalimalik.com
