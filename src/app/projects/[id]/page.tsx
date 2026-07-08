@@ -1,5 +1,5 @@
 import { getProjectById, getAllProjects } from '@/data/projects'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { Metadata } from 'next'
 import ProjectDetailClient from '@/components/ProjectDetailClient'
 import { siteConfig } from '@/config/site'
@@ -11,7 +11,8 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
-  const project = getProjectById(id)
+  const projectId = id === 'nearo' ? 'portlyy' : id
+  const project = getProjectById(projectId)
 
   if (!project) {
     return {
@@ -37,6 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Props) {
   const { id } = await params
+
+  if (id === 'nearo') {
+    redirect('/projects/portlyy')
+  }
+
   const project = getProjectById(id)
   const allProjects = getAllProjects()
 

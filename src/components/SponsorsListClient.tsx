@@ -1,22 +1,25 @@
-'use client'
+"use client";
 
-import OnekoCat from '@/components/OnekoCat'
-import SponsorShowcase from '@/components/SponsorShowcase'
-import SponsorButton from '@/components/SponsorButton'
-import FadeIn from '@/components/FadeIn'
-import DiagonalPattern from '@/components/DiagonalPattern'
-import PageNavigation from '@/components/Navigation'
-import { Sponsor } from '@/types/sponsor'
-import { profileConfig } from '@/config/profile'
+import SponsorShowcase from "@/components/SponsorShowcase";
+import SponsorButton from "@/components/SponsorButton";
+import FadeIn from "@/components/FadeIn";
+import DiagonalPattern from "@/components/DiagonalPattern";
+import PageNavigation from "@/components/Navigation";
+import { Sponsor } from "@/types/sponsor";
+import { profileConfig } from "@/config/profile";
 
 interface SponsorsListClientProps {
-  sponsors: Sponsor[]
+  sponsors: Sponsor[];
 }
 
-export default function SponsorsListClient({ sponsors }: SponsorsListClientProps) {
+export default function SponsorsListClient({
+  sponsors,
+}: SponsorsListClientProps) {
   return (
-    <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
+    <div
+      className="min-h-screen transition-colors duration-300 relative"
+      style={{ fontFamily: "var(--font-hk-grotesk)" }}
+    >
       <div className="relative mx-auto max-w-4xl min-h-screen">
         <DiagonalPattern side="left" topOffset="0" />
         <DiagonalPattern side="right" topOffset="0" />
@@ -52,7 +55,10 @@ export default function SponsorsListClient({ sponsors }: SponsorsListClientProps
               <div className="sm:px-12 py-2">
                 <div className="px-4">
                   <FadeIn delay={0.3} duration={0.5}>
-                    <SponsorShowcase sponsors={sponsors} sponsorUrl={profileConfig.socials.sponsor} />
+                    <SponsorShowcase
+                      sponsors={sponsors}
+                      sponsorUrl={profileConfig.socials.sponsor}
+                    />
                   </FadeIn>
                 </div>
               </div>
@@ -62,5 +68,5 @@ export default function SponsorsListClient({ sponsors }: SponsorsListClientProps
         </div>
       </div>
     </div>
-  )
+  );
 }

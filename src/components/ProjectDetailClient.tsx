@@ -1,26 +1,30 @@
-'use client'
+"use client";
 
-import { ProjectCard } from '@/components/ProjectCard'
-import OnekoCat from '@/components/OnekoCat'
-import FadeIn from '@/components/FadeIn'
-import { FadeInUp } from '@/components/ui/PageTransitions'
-import DiagonalPattern from '@/components/DiagonalPattern'
-import PageNavigation from '@/components/Navigation'
-import { Project } from '@/types/project'
+import { ProjectCard } from "@/components/ProjectCard";
+import FadeIn from "@/components/FadeIn";
+import { FadeInUp } from "@/components/ui/PageTransitions";
+import DiagonalPattern from "@/components/DiagonalPattern";
+import PageNavigation from "@/components/Navigation";
+import { Project } from "@/types/project";
 
 interface ProjectDetailClientProps {
   project: Project;
   allProjects: Project[];
 }
 
-export default function ProjectDetailClient({ project, allProjects }: ProjectDetailClientProps) {
+export default function ProjectDetailClient({
+  project,
+  allProjects,
+}: ProjectDetailClientProps) {
   return (
-    <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
+    <div
+      className="min-h-screen transition-colors duration-300 relative"
+      style={{ fontFamily: "var(--font-hk-grotesk)" }}
+    >
       <div className="relative mx-auto max-w-4xl">
         <DiagonalPattern side="left" topOffset="0" />
         <DiagonalPattern side="right" topOffset="0" />
-        
+
         <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
           <div className="prose dark:prose-invert max-w-none">
             <div className="text-base">
@@ -36,7 +40,11 @@ export default function ProjectDetailClient({ project, allProjects }: ProjectDet
               <FadeInUp delay={0.4}>
                 <div className="sm:px-12 py-2">
                   <div className="px-4">
-                    <ProjectCard project={project} isDetailed allProjects={allProjects} />
+                    <ProjectCard
+                      project={project}
+                      isDetailed
+                      allProjects={allProjects}
+                    />
                   </div>
                 </div>
               </FadeInUp>
@@ -46,5 +54,5 @@ export default function ProjectDetailClient({ project, allProjects }: ProjectDet
         </div>
       </div>
     </div>
-  )
+  );
 }

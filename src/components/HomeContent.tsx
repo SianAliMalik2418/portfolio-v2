@@ -1,43 +1,38 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import DiagonalPattern from './DiagonalPattern'
-import BannerSection from './BannerSection'
-import ProfileHeader from './ProfileHeader'
-import ContentSection from './ContentSection'
-import ContentParagraph from './ContentParagraph'
-import SectionBorder from './SectionBorder'
-import ExperienceContent from './ExperienceContent'
-import Reachout from './Reachout'
-import CallToAction from './CallToAction'
-import TechStackMarquee from './TechStackMarquee'
-import { Reveal } from './Reveal'
-import { projects } from '@/data/projects'
-import { MasonryProjectCard } from './MasonryProjectCard'
-import { faqs } from '@/data/blogs'
-import { FAQCard } from './FAQCard'
-import GitHubActivity from './GitHubActivity'
-import AboutMe from './AboutMe'
-import SpotifyPlayer from './SpotifyPlayer'
-import { profileConfig } from '@/config/profile'
-
+import Link from "next/link";
+import DiagonalPattern from "./DiagonalPattern";
+import BannerSection from "./BannerSection";
+import ProfileHeader from "./ProfileHeader";
+import ContentSection from "./ContentSection";
+import ContentParagraph from "./ContentParagraph";
+import SectionBorder from "./SectionBorder";
+import ExperienceContent from "./ExperienceContent";
+import Reachout from "./Reachout";
+import CallToAction from "./CallToAction";
+import TechStackMarquee from "./TechStackMarquee";
+import { Reveal } from "./Reveal";
+import { projects } from "@/data/projects";
+import { MasonryProjectCard } from "./MasonryProjectCard";
+import AboutMe from "./AboutMe";
+import { profileConfig } from "@/config/profile";
 
 export default function NewHeroSection() {
   return (
-    <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
+    <div
+      className="min-h-screen transition-colors duration-300 relative"
+      style={{ fontFamily: "var(--font-hk-grotesk)" }}
+    >
       <div className="relative mx-auto max-w-4xl">
         {/* Diagonal Patterns */}
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />
 
         {/* Main Content */}
-        <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
+        <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl  flex flex-col gap-5 px-8">
           {/* Banner Section */}
           <Reveal delay={0.1}>
-            <BannerSection
-              bannerImage={profileConfig.bannerImage}
-              quote={profileConfig.heroQuote}
-            />
+            <BannerSection />
           </Reveal>
 
           {/* Profile Header */}
@@ -51,73 +46,73 @@ export default function NewHeroSection() {
             />
           </Reveal>
 
-          {/* Content Prose */}
-          <div className="prose dark:prose-invert max-w-none">
-            <div className="text-base">
-              {/* Current Role Section */}
+          {/* Main content */}
+          <div className="prose dark:prose-invert max-w-none  ">
+            <div className="text-base space-y-5">
+              {/* Current Role subtitle  */}
               <Reveal delay={0.1}>
-                <ContentSection
-                  subtitle={profileConfig.role}
-                  title=''
-                  className="mt-6"
-                >
+                <ContentSection subtitle={profileConfig.role} title="">
                   <div></div>
                 </ContentSection>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <SectionBorder className="mt-6" />
+                <SectionBorder />
               </Reveal>
 
-              {/* About Section */}
+              {/* Bio Section */}
               <Reveal delay={0.1}>
-                <ContentSection className="pb-6 sm:pb-8 pt-4 sm:pt-6 px-2 sm:px-0">
-                  <ContentParagraph className="mb-4 text-base sm:text-lg">
-                    <span className="font-medium dark:text-white text-black">I build full-stack products.</span> {profileConfig.intro}
+                <ContentSection className="">
+                  <ContentParagraph className="text-base sm:text-lg">
+                    <span className="font-medium dark:text-white text-black">
+                      Hey there 👋 , my name is Sian and I am a full-stack
+                      engineer,
+                    </span>{" "}
+                    {profileConfig.intro}
                   </ContentParagraph>
-
-                  {/* Spotify Player */}
-                  <div className="mt-4 sm:mt-6 px-2 sm:px-0">
-                    <SpotifyPlayer />
-                  </div>
                 </ContentSection>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <SectionBorder className="mt-6" />
+                <SectionBorder className="" />
               </Reveal>
 
               {/* Experience Section */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4 font-[family-name:var(--font-instrument-serif)]">Professional Experience</h2>
-                  <div className="px-4">
+                <div className="space-y-5 py-7">
+                  <h2 className="text-base sm:text-xl opacity-60  font-[family-name:var(--font-instrument-serif)]">
+                    Professional Experience
+                  </h2>
+                  <div className="">
                     <ExperienceContent />
                   </div>
                 </div>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <SectionBorder className="mt-4" />
+                <SectionBorder className="" />
               </Reveal>
 
               {/* Projects / Works */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Projects / Works</h2>
-                  </div>
-                  <div className="px-4">
+                <div className="space-y-5 py-7">
+                  <h2 className="text-base sm:text-xl opacity-60 font-[family-name:var(--font-instrument-serif)]">
+                    Projects / Works
+                  </h2>
+                  <div className="">
                     <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
                       {projects.slice(0, 6).map((project) => (
-                        <MasonryProjectCard key={project.id} project={project} />
+                        <MasonryProjectCard
+                          key={project.id}
+                          project={project}
+                        />
                       ))}
                     </div>
                   </div>
-                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
+                  <div className="flex justify-center pt-3 sm:pt-4">
                     <Link
                       href="/projects"
-                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
+                      className="inline-flex items-center justify-center gap-1 rounded-full border border-neutral-300 bg-neutral-100 px-4 py-2 text-xs font-medium text-neutral-800 transition-colors hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700 sm:text-sm"
                     >
                       View All
                       <span>→</span>
@@ -125,69 +120,48 @@ export default function NewHeroSection() {
                   </div>
 
                   {/* About Me Section */}
-                  <div className="px-4 mt-8 sm:mt-10 mb-8 sm:mb-10">
+                  <div className="py-7">
                     <AboutMe />
                   </div>
 
                   {/* GitHub Activity Heatmap */}
-                  <div className="px-4 mb-4 sm:mb-6">
-                    <GitHubActivity username={profileConfig.socials.githubUsername} />
-                  </div>
+                  {/*<div className="">
+                    <GitHubActivity
+                      username={profileConfig.socials.githubUsername}
+                    />
+                  </div>*/}
                 </div>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-
-              {/* Thoughts Section */}
-              <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Thoughts</h2>
-                  </div>
-                  <div className="px-4">
-                    <div className="space-y-0 group">
-                      {faqs.map((faq) => (
-                        <FAQCard key={faq.id} faq={faq} />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
+                <SectionBorder className="" />
               </Reveal>
 
               {/* Tech Stack Section */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 mt-4 sm:mt-6 mb-4 sm:mb-6">
-                  <div className="px-4">
-                    <TechStackMarquee className="w-full" />
-                  </div>
+                <div className="py-7">
+                  <TechStackMarquee className="w-full" />
                 </div>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
+                <SectionBorder className="" />
               </Reveal>
-
 
               {/* call to action*/}
               <Reveal delay={0.1}>
-                <div className="px-4 sm:px-0">
+                <div className="py-7">
                   <CallToAction />
                 </div>
               </Reveal>
 
               <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
+                <SectionBorder className="" />
               </Reveal>
 
               {/* Reachout Section */}
               <Reveal delay={0.1}>
-                <div className="mt-4 sm:mt-6">
+                <div className="">
                   <Reachout
                     title="Let's connect"
                     subtitle="Find me on these platforms"
@@ -199,5 +173,5 @@ export default function NewHeroSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }

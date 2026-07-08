@@ -1,24 +1,27 @@
-'use client'
+"use client";
 
-import OnekoCat from '@/components/OnekoCat'
-import { MasonryGrid } from '@/components/MasonryGrid'
-import FadeIn from '@/components/FadeIn'
-import DiagonalPattern from '@/components/DiagonalPattern'
-import PageNavigation from '@/components/Navigation'
-import { Project } from '@/types/project'
+import { MasonryGrid } from "@/components/MasonryGrid";
+import FadeIn from "@/components/FadeIn";
+import DiagonalPattern from "@/components/DiagonalPattern";
+import PageNavigation from "@/components/Navigation";
+import { Project } from "@/types/project";
 
 interface ProjectsListClientProps {
-  projects: Project[]
+  projects: Project[];
 }
 
-export default function ProjectsListClient({ projects }: ProjectsListClientProps) {
+export default function ProjectsListClient({
+  projects,
+}: ProjectsListClientProps) {
   return (
-    <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
+    <div
+      className="min-h-screen transition-colors duration-300 relative"
+      style={{ fontFamily: "var(--font-hk-grotesk)" }}
+    >
       <div className="relative mx-auto max-w-4xl">
         <DiagonalPattern side="left" topOffset="0" />
         <DiagonalPattern side="right" topOffset="0" />
-        
+
         <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
           <div className="prose dark:prose-invert max-w-none">
             <div className="text-base">
@@ -37,7 +40,7 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
                   </div>
                 </div>
               </FadeIn>
-              
+
               <div className="sm:px-12 py-2">
                 <div className="px-4">
                   <MasonryGrid projects={projects} />
@@ -49,5 +52,5 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
         </div>
       </div>
     </div>
-  )
+  );
 }

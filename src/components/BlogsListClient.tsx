@@ -1,20 +1,21 @@
-'use client'
+"use client";
 
-import { BlogCard } from '@/components/BlogCard'
-import OnekoCat from '@/components/OnekoCat'
-import FadeIn from '@/components/FadeIn'
-import DiagonalPattern from '@/components/DiagonalPattern'
-import PageNavigation from '@/components/Navigation'
-import { FAQ } from '@/types/blog'
+import { BlogCard } from "@/components/BlogCard";
+import FadeIn from "@/components/FadeIn";
+import DiagonalPattern from "@/components/DiagonalPattern";
+import PageNavigation from "@/components/Navigation";
+import { FAQ } from "@/types/blog";
 
 interface BlogsListClientProps {
-  blogs: FAQ[]
+  blogs: FAQ[];
 }
 
 export default function BlogsListClient({ blogs }: BlogsListClientProps) {
   return (
-    <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
+    <div
+      className="min-h-screen transition-colors duration-300 relative"
+      style={{ fontFamily: "var(--font-hk-grotesk)" }}
+    >
       <div className="relative mx-auto max-w-4xl min-h-screen">
         <DiagonalPattern side="left" topOffset="0" />
         <DiagonalPattern side="right" topOffset="0" />
@@ -65,5 +66,5 @@ export default function BlogsListClient({ blogs }: BlogsListClientProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

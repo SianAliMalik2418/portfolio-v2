@@ -29,7 +29,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://sianalimalik.com/images/project-attendance.svg</image:loc>
+      <image:loc>https://sianalimalik.com/images/ams-landing-page.png</image:loc>
       <image:title>Attendance Management System</image:title>
     </image:image>
   </url>
@@ -39,18 +39,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://sianalimalik.com/images/project-pinzak.svg</image:loc>
+      <image:loc>https://sianalimalik.com/images/pinzak-landing-page.png</image:loc>
       <image:title>Pinzak</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://sianalimalik.com/projects/nearo</loc>
+    <loc>https://sianalimalik.com/projects/portlyy</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://sianalimalik.com/images/project-nearo.svg</image:loc>
-      <image:title>Nearo</image:title>
+      <image:loc>https://sianalimalik.com/images/portlly-landing-page.png</image:loc>
+      <image:title>Portlyy</image:title>
     </image:image>
   </url>
 </urlset>

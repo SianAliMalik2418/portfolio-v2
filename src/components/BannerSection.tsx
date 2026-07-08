@@ -1,31 +1,50 @@
 'use client'
 
-import Image from 'next/image'
-import { profileConfig } from '@/config/profile'
+import { AnimatePresence, motion } from 'motion/react'
+import { useEffect, useMemo, useState } from 'react'
+import { ShimmeringText } from './shimmering-text'
 
-interface BannerSectionProps {
-  quote?: string
-  bannerImage?: string
-}
+export default function BannerSection() {
+  const quotes = useMemo(
+    () => [
+      'Turning product ideas into polished full-stack applications.',
+      'Building reliable web products for teams that need to move fast.',
+      'From landing pages to dashboards, I build products that work.',
+      'Clean interfaces, reliable APIs, and products ready for real users.',
+      'Shipping practical web solutions from concept to launch.',
+    ],
+    []
+  )
+  const [quoteIndex, setQuoteIndex] = useState(0)
 
-export default function BannerSection({
-  quote = profileConfig.heroQuote,
-  bannerImage = profileConfig.bannerImage
-}: BannerSectionProps) {
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setQuoteIndex((current) => (current + 1) % quotes.length)
+    }, 3500)
+
+    return () => window.clearInterval(interval)
+  }, [quotes.length])
+
   return (
     <div className="w-full mb-2 relative">
-      <div className="relative" style={{ height: 'auto' }}>
-        <Image
-          alt="Banner"
-          width={1240}
-          height={900}
-          className="rounded-none w-full h-[200px] sm:h-[270px] object-cover"
-          src={bannerImage}
-          style={{ color: 'transparent', minHeight: '100px' }}
-          priority
-        />
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <p className="text-white text-base sm:text-xl italic font-[family-name:var(--font-instrument-serif)] text-center">{quote}</p>
+      <div className="flex h-[200px] min-h-[100px] w-full items-center justify-center bg-white px-4 text-black dark:bg-black dark:text-white sm:h-[270px]">
+        <div className="grid min-h-20 place-items-center overflow-hidden text-center text-base italic font-[family-name:var(--font-instrument-serif)] sm:min-h-24 sm:text-xl">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={quotes[quoteIndex]}
+              initial={{ opacity: 0, y: 18, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -18, filter: 'blur(4px)' }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
+              className="max-w-2xl leading-relaxed"
+            >
+              <ShimmeringText
+                text={quotes[quoteIndex]}
+                duration={1.4}
+                className="dark:[--color:var(--color-zinc-400)] dark:[--shimmering-color:var(--color-zinc-50)]"
+              />
+            </motion.p>
+          </AnimatePresence>
         </div>
       </div>
     </div>

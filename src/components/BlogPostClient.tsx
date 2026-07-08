@@ -1,21 +1,22 @@
-'use client'
+"use client";
 
-import { BlogContent } from '@/components/BlogContent'
-import OnekoCat from '@/components/OnekoCat'
-import PageNavigation from '@/components/Navigation'
-import DiagonalPattern from '@/components/DiagonalPattern'
-import FadeIn from '@/components/FadeIn'
-import { FAQ } from '@/types/blog'
-import { FadeInUp } from '@/components/ui/PageTransitions'
+import { BlogContent } from "@/components/BlogContent";
+import PageNavigation from "@/components/Navigation";
+import DiagonalPattern from "@/components/DiagonalPattern";
+import FadeIn from "@/components/FadeIn";
+import { FAQ } from "@/types/blog";
+import { FadeInUp } from "@/components/ui/PageTransitions";
 
 interface BlogPostClientProps {
-  blog: FAQ
+  blog: FAQ;
 }
 
 export default function BlogPostClient({ blog }: BlogPostClientProps) {
   return (
-    <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
+    <div
+      className="min-h-screen transition-colors duration-300 relative"
+      style={{ fontFamily: "var(--font-hk-grotesk)" }}
+    >
       <div className="relative mx-auto max-w-4xl min-h-screen">
         <DiagonalPattern side="left" topOffset="0" />
         <DiagonalPattern side="right" topOffset="0" />
@@ -45,5 +46,5 @@ export default function BlogPostClient({ blog }: BlogPostClientProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

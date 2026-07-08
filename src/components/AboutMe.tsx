@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { profileConfig } from '@/config/profile'
 import { featuredSkills } from '@/data/skills'
+import { SkillIcon } from '@/components/SkillIcon'
 
 export default function AboutMe() {
     return (
@@ -50,12 +51,12 @@ export default function AboutMe() {
                                 <Tooltip key={skill.name}>
                                     <TooltipTrigger asChild>
                                         <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer">
-                                            <Image
-                                                src={skill.icon}
-                                                alt={skill.name}
+                                            <SkillIcon
+                                                skill={skill}
                                                 width={28}
                                                 height={28}
                                                 className="w-6 h-6 sm:w-7 sm:h-7"
+                                                imageClassName="w-full h-full"
                                                 unoptimized
                                             />
                                         </div>

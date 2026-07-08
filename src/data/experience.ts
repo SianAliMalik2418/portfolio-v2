@@ -15,6 +15,7 @@ export const experiences: ExperienceItem[] = [
     position: "Software Engineer",
     duration: "Dec. 2024 - Present",
     location: "On-site, Lahore, Pakistan",
+    logoUrl: "/images/whitebox-logo.jpeg",
     description:
       "Building and shipping full-stack client products and internal tools with React, Next.js, TypeScript, Node.js, and Express.",
     achievements: [
@@ -34,4 +35,3 @@ export const education = {
   cgpa: "3.80 / 4.0",
   location: "Lahore, Pakistan",
 } as const;
-

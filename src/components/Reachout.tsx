@@ -1,36 +1,34 @@
-'use client'
+"use client";
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { Tooltip } from "./ui/tooltip-card";
-import { VisitorCount } from "./VisitorCount";
 import { profileConfig } from "@/config/profile";
-import { siteConfig } from "@/config/site";
 
 interface ReachoutProps {
-  title?: string
-  subtitle?: string
+  title?: string;
+  subtitle?: string;
   socialLinks?: {
-    twitter?: string
-    resume?: string
-    github?: string
-    linkedin?: string
-    mail?: string
-  }
+    twitter?: string;
+    resume?: string;
+    github?: string;
+    linkedin?: string;
+    mail?: string;
+  };
 }
 
 export default function Reachout({
   title = "Let's connect",
   subtitle = "Find me on these platforms",
-  socialLinks = profileConfig.socials
+  socialLinks = profileConfig.socials,
 }: ReachoutProps) {
   return (
-    <div className="sm:px-12 px-4 pb-24 sm:pb-28">
+    <div className="pb-5">
       <div className="text-left w-full">
         <div className="mb-4 sm:mb-6">
-          <h2 className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl mb-2 opacity-20 mt-4 sm:mt-6">
+          <h2 className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl opacity-60">
             {title}
           </h2>
-          <p className="opacity-20 text-md sm:text-lg mb-3 sm:mb-4">
+          <p className="opacity-40 text-md sm:text-lg mb-3 sm:mb-4">
             {subtitle}
           </p>
         </div>
@@ -44,14 +42,16 @@ export default function Reachout({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
                 <FaGithub className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">GitHub</span>
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                  GitHub
+                </span>
               </a>
             </Tooltip>
           )}
@@ -64,14 +64,16 @@ export default function Reachout({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
                 <FaXTwitter className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Twitter</span>
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                  Twitter
+                </span>
               </a>
             </Tooltip>
           )}
@@ -84,14 +86,16 @@ export default function Reachout({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
                 <FaLinkedin className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">LinkedIn</span>
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                  LinkedIn
+                </span>
               </a>
             </Tooltip>
           )}
@@ -104,14 +108,16 @@ export default function Reachout({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
                 <IoMdMail className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Mail</span>
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                  Mail
+                </span>
               </a>
             </Tooltip>
           )}
@@ -124,30 +130,21 @@ export default function Reachout({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
                 <FaPaperclip className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Resume</span>
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                  Resume
+                </span>
               </a>
             </Tooltip>
           )}
         </div>
-
-        {/* Footer Section */}
-        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
-            <div className="text-sm dark:text-white/50 text-black/50 text-center sm:text-left">
-              <p><span className="font-medium text-black/70 dark:text-white/70">{profileConfig.footer.credit}</span></p>
-              <p>© {siteConfig.copyrightYear}. All rights reserved.</p>
-            </div>
-            <VisitorCount />
-          </div>
-        </div>
       </div>
     </div>
-  )
+  );
 }
