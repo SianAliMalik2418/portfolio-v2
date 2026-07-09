@@ -60,7 +60,7 @@ function TestimonialRow({
       <Marquee
         reverse={reverse}
         pauseOnHover
-        className="[--duration:45s] [--gap:0.75rem]"
+        className="[--duration:30s] [--gap:0.75rem]"
       >
         {data.map((t, i) => (
           <TestimonialCard key={i} testimonial={t} />

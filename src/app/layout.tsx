@@ -22,7 +22,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
-  title: siteConfig.legalName,
+  title: `${siteConfig.name} | Software Engineer`,
   description: siteConfig.description,
   verification: siteConfig.verification.google
     ? {

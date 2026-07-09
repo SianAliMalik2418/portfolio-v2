@@ -1,7 +1,6 @@
 "use client";
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
-import { Tooltip } from "./ui/tooltip-card";
 import { profileConfig } from "@/config/profile";
 
 interface ReachoutProps {
@@ -43,113 +42,103 @@ export default function Reachout({
           className={`flex gap-3 sm:gap-3 ${isCentered ? "justify-center" : "justify-center sm:justify-start"}`}
         >
           {socialLinks.github && (
-            <Tooltip content="GitHub">
-              <a
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                  WebkitTouchCallout: "none",
-                  WebkitUserSelect: "none",
-                  userSelect: "none",
-                }}
-              >
-                <FaGithub className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
-                  GitHub
-                </span>
-              </a>
-            </Tooltip>
+            <a
+              className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
+              href={socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                WebkitTapHighlightColor: "transparent",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+              }}
+            >
+              <FaGithub className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+              <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                GitHub
+              </span>
+            </a>
           )}
 
           {socialLinks.twitter && (
-            <Tooltip content="Twitter">
-              <a
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
-                href={socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                  WebkitTouchCallout: "none",
-                  WebkitUserSelect: "none",
-                  userSelect: "none",
-                }}
-              >
-                <FaXTwitter className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
-                  Twitter
-                </span>
-              </a>
-            </Tooltip>
+            <a
+              className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
+              href={socialLinks.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                WebkitTapHighlightColor: "transparent",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+              }}
+            >
+              <FaXTwitter className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+              <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                Twitter
+              </span>
+            </a>
           )}
 
           {socialLinks.linkedin && (
-            <Tooltip content="LinkedIn">
-              <a
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                  WebkitTouchCallout: "none",
-                  WebkitUserSelect: "none",
-                  userSelect: "none",
-                }}
-              >
-                <FaLinkedin className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
-                  LinkedIn
-                </span>
-              </a>
-            </Tooltip>
+            <a
+              className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                WebkitTapHighlightColor: "transparent",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+              }}
+            >
+              <FaLinkedin className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+              <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                LinkedIn
+              </span>
+            </a>
           )}
 
           {socialLinks.mail && (
-            <Tooltip content="Contact me">
-              <a
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
-                href={socialLinks.mail}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                  WebkitTouchCallout: "none",
-                  WebkitUserSelect: "none",
-                  userSelect: "none",
-                }}
-              >
-                <IoMdMail className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
-                  Mail
-                </span>
-              </a>
-            </Tooltip>
+            <a
+              className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
+              href={socialLinks.mail}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                WebkitTapHighlightColor: "transparent",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+              }}
+            >
+              <IoMdMail className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+              <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                Mail
+              </span>
+            </a>
           )}
 
           {socialLinks.resume && (
-            <Tooltip content="Resume">
-              <a
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
-                href={socialLinks.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                  WebkitTouchCallout: "none",
-                  WebkitUserSelect: "none",
-                  userSelect: "none",
-                }}
-              >
-                <FaPaperclip className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
-                  Resume
-                </span>
-              </a>
-            </Tooltip>
+            <a
+              className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75"
+              href={socialLinks.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                WebkitTapHighlightColor: "transparent",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+              }}
+            >
+              <FaPaperclip className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+              <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
+                Resume
+              </span>
+            </a>
           )}
         </div>
       </div>
