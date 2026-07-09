@@ -2,17 +2,6 @@ import { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
-    id: "attendance-management-system",
-    title: "Attendance Management System",
-    description:
-      "A full HR suite with admin and employee portals for attendance, leaves, work-from-home, hybrid scheduling, working hours, events, posts, documents, and employee management.",
-    longDescription:
-      "Full HR Suite\n\nBuilt a complete HR platform with separate admin and employee portals covering attendance, leaves, work-from-home, hybrid scheduling, working hours, events, posts, documents, and employee management.\n\nDesigned role-based access control to separate admin and employee permissions across the system.\n\nImplemented complex scheduling and time-tracking logic to handle hybrid work, working hours, and leave calculations.\n\nStarted as the sole frontend and backend developer, then onboarded and mentored two junior backend developers and led their work through delivery.",
-    image: "/images/ams-landing-page.png",
-    tags: ["React (Vite)", "TypeScript", "Express", "MongoDB", "Tailwind CSS", "Shadcn UI"],
-    date: "2025",
-  },
-  {
     id: "pinzak",
     title: "Pinzak",
     description:
@@ -34,6 +23,17 @@ export const projects: Project[] = [
     liveLink: "https://portlyy.com/",
     image: "/images/portlly-landing-page.png",
     tags: ["TanStack Start", "TypeScript", "Python", "R2", "Tailwind CSS", "Shadcn UI"],
+    date: "2025",
+  },
+  {
+    id: "ams",
+    title: "AMS",
+    description:
+      "A full HR suite with admin and employee portals for attendance, leaves, work-from-home, hybrid scheduling, working hours, events, posts, documents, and employee management.",
+    longDescription:
+      "Full HR Suite\n\nBuilt a complete HR platform with separate admin and employee portals covering attendance, leaves, work-from-home, hybrid scheduling, working hours, events, posts, documents, and employee management.\n\nDesigned role-based access control to separate admin and employee permissions across the system.\n\nImplemented complex scheduling and time-tracking logic to handle hybrid work, working hours, and leave calculations.\n\nStarted as the sole frontend and backend developer, then onboarded and mentored two junior backend developers and led their work through delivery.",
+    image: "/images/ams-landing-page.png",
+    tags: ["React (Vite)", "TypeScript", "Express", "MongoDB", "Tailwind CSS", "Shadcn UI"],
     date: "2025",
   },
 ];

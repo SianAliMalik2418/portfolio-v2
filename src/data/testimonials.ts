@@ -26,13 +26,6 @@ export const testimonials: Testimonial[] = [
     date: "2025-04-18",
   },
   {
-    authorAvatar: "/images/testimonials-avatar/qaisar-raza.jpeg",
-    authorName: "Qaiser Raza",
-    url: "#",
-    quote: "Every team should have a resource like Sian.",
-    date: "2025-01-30",
-  },
-  {
     authorAvatar: "/images/testimonials-avatar/umar-maqsood.png",
     authorName: "Umar Maqsood",
     url: "#",

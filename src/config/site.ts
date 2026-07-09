@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Sian Malik",
   legalName: "Sian Ali Malik",
   shortName: "Sian",
-  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://sianalimalik.com",
+  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://sianmalik.com",
   description:
     "Software engineer building full-stack products with TypeScript, React, Next.js, Node.js, Express, MongoDB, and PostgreSQL.",
   ogImage: "/images/sian-open-graph.svg",
