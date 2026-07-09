@@ -10,7 +10,7 @@ export const skills: Skill[] = [
   { name: "JavaScript", category: "language", icon: "/tech-icons/javascript.svg" },
   { name: "TypeScript", category: "language", icon: "/tech-icons/typescript.svg" },
   { name: "React.js", category: "frontend", icon: "/tech-icons/react.svg" },
-  { name: "Next.js", category: "frontend", icon: "/tech-icons/nextjs.svg" },
+  { name: "Next.js", category: "frontend", icon: "/tech-icons/nextjs.svg", darkIcon: "/tech-icons/nextjs-dark.svg" },
   { name: "TanStack Start", category: "frontend", icon: "/skills/tanstack.svg" },
   { name: "Node.js", category: "backend", icon: "/tech-icons/nodejs.svg" },
   { name: "Express", category: "backend", icon: "/skills/express.svg", darkIcon: "/skills/express-dark.svg" },
@@ -26,7 +26,7 @@ export const skills: Skill[] = [
   { name: "Framer Motion", category: "library", icon: "/skills/framer.svg", darkIcon: "/skills/framer-dark.svg" },
   { name: "Git", category: "tool", icon: "/tech-icons/Git.svg" },
   { name: "AWS EC2", category: "tool", icon: "/tech-icons/AWS.svg" },
-  { name: "DigitalOcean", category: "tool", icon: "/tech-icons/docker.svg" },
+  { name: "DigitalOcean", category: "tool", icon: "/tech-icons/digitalocean.svg" },
   { name: "Cloudflare Workers", category: "tool", icon: "/skills/cloudflare-workers.svg" },
 ];
 

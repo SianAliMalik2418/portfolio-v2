@@ -6,21 +6,21 @@ export const profileConfig = {
   email: "sianalimalik2418@gmail.com",
   age: "",
   title: "Software Engineer",
-  role: "Full-stack Developer | TypeScript Engineer",
+  role: "Full-stack web apps, dashboards, and SaaS MVPs",
   location: "Lahore, Pakistan",
   avatar: "/images/sian-avatar.png",
   bannerImage: "/images/sian-banner.svg",
   aboutImage: "/images/sian-avatar.png",
   heroQuote:
-    "Building clean systems, useful products, and code that can keep scaling.",
+    "Building full-stack products from idea to launch.",
   bio: "Software engineer who builds full-stack applications with JavaScript, TypeScript, React, and Next.js, backed by Node.js, Express, MongoDB, and Postgres. Focused on writing clean, maintainable code and delivering products that scale.",
   intro:
-    "I build full-stack applications from architecture to deployment, with a focus on practical product delivery, maintainable systems, and integrations that make teams faster.",
+    "I build production-ready web apps, dashboards, and MVPs with Next.js, TypeScript, Node.js, and databases. I can handle frontend, backend, integrations, auth, payments, and deployment.",
   socials: {
     github: "https://github.com/SianAliMalik2418",
     githubUsername: "SianAliMalik2418",
     linkedin: "https://www.linkedin.com/in/sianalimalik/",
-    twitter: "",
+    twitter: "https://x.com/SianAliMalik",
     mail: "mailto:sianalimalik2418@gmail.com",
     resume: "/sian-ali-malik-resume.pdf",
     calendar: "",
@@ -28,14 +28,14 @@ export const profileConfig = {
   },
   cta: {
     preText:
-      "If you need a full-stack engineer who can own delivery end to end, let's talk.",
+      "Need a full-stack developer for a web app, dashboard, MVP, or internal tool?",
     linkText: "Email Me",
     linkUrl: "mailto:sianalimalik2418@gmail.com",
     quote: "Focused execution turns complex product work into shipped systems.",
     quoteSource: "Sian Malik",
   },
   footer: {
-    credit: "Design and developed by Sian",
+    credit: "Designed and developed by Sian",
   },
 } as const;
 

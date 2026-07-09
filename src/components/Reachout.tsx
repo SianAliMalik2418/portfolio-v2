@@ -7,6 +7,7 @@ import { profileConfig } from "@/config/profile";
 interface ReachoutProps {
   title?: string;
   subtitle?: string;
+  align?: "left" | "center";
   socialLinks?: {
     twitter?: string;
     resume?: string;
@@ -19,21 +20,28 @@ interface ReachoutProps {
 export default function Reachout({
   title = "Let's connect",
   subtitle = "Find me on these platforms",
+  align = "left",
   socialLinks = profileConfig.socials,
 }: ReachoutProps) {
+  const isCentered = align === "center";
+
   return (
     <div className="pb-5">
-      <div className="text-left w-full">
+      <div className={`${isCentered ? "text-center" : "text-left"} w-full`}>
         <div className="mb-4 sm:mb-6">
           <h2 className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl opacity-60">
             {title}
           </h2>
-          <p className="opacity-40 text-md sm:text-lg mb-3 sm:mb-4">
-            {subtitle}
-          </p>
+          {subtitle && (
+            <p className="opacity-40 text-md sm:text-lg mb-3 sm:mb-4">
+              {subtitle}
+            </p>
+          )}
         </div>
 
-        <div className="flex justify-center sm:justify-start gap-3 sm:gap-3">
+        <div
+          className={`flex gap-3 sm:gap-3 ${isCentered ? "justify-center" : "justify-center sm:justify-start"}`}
+        >
           {socialLinks.github && (
             <Tooltip content="GitHub">
               <a

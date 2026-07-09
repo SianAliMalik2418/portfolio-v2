@@ -12,7 +12,7 @@ interface TechIconProps {
 function TechIcon({ tech, className = "" }: TechIconProps) {
   return (
     <div
-      className={`flex flex-col items-center justify-center p-2 sm:p-3 transition-all duration-300 hover:scale-105 min-w-[80px] sm:min-w-[90px] group ${className}`}
+      className={`flex flex-col items-center justify-center p-2 sm:p-3 transition-all duration-300 hover:scale-105 min-w-[80px] sm:min-w-[90px] group/tech ${className}`}
     >
       {/* Icon Container */}
       <div className="relative w-8 h-8 sm:w-10 sm:h-10 mb-1.5 sm:mb-2 flex items-center justify-center">
@@ -23,13 +23,13 @@ function TechIcon({ tech, className = "" }: TechIconProps) {
             width={40}
             height={40}
             className="w-full h-full"
-            imageClassName="w-full h-full grayscale opacity-70 hover:opacity-90 transition-opacity"
+            imageClassName="w-full h-full grayscale opacity-70 transition-all duration-300 group-hover/tech:grayscale-0 group-hover/tech:opacity-100"
           />
         </div>
       </div>
 
       {/* Tech Name */}
-      <span className="text-[10px] sm:text-xs text-center font-medium text-gray-700 dark:text-gray-300 leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+      <span className="text-[10px] sm:text-xs text-center font-medium text-gray-700 dark:text-gray-300 leading-tight group-hover/tech:text-gray-900 dark:group-hover/tech:text-white transition-colors">
         {tech.name}
       </span>
     </div>

@@ -11,13 +11,21 @@ import ExperienceContent from "./ExperienceContent";
 import Reachout from "./Reachout";
 import CallToAction from "./CallToAction";
 import TechStackMarquee from "./TechStackMarquee";
+import ServicesSection from "./ServicesSection";
 import { Reveal } from "./Reveal";
 import { projects } from "@/data/projects";
 import { MasonryProjectCard } from "./MasonryProjectCard";
-import AboutMe from "./AboutMe";
 import { profileConfig } from "@/config/profile";
 
 export default function NewHeroSection() {
+  const featuredProjects = projects.slice(0, 3);
+  const hasMoreProjects = projects.length > featuredProjects.length;
+  const secondaryContactLinks = {
+    github: profileConfig.socials.github,
+    linkedin: profileConfig.socials.linkedin,
+    twitter: profileConfig.socials.twitter,
+  };
+
   return (
     <div
       className="min-h-screen transition-colors duration-300 relative"
@@ -77,10 +85,44 @@ export default function NewHeroSection() {
                 <SectionBorder className="" />
               </Reveal>
 
-              {/* Experience Section */}
+              {/* Projects / Works */}
               <Reveal delay={0.1}>
                 <div className="space-y-5 py-7">
                   <h2 className="text-base sm:text-xl opacity-60  font-[family-name:var(--font-instrument-serif)]">
+                    Featured Projects
+                  </h2>
+                  <div className="">
+                    <div className="flex flex-col gap-4">
+                      {featuredProjects.map((project) => (
+                        <MasonryProjectCard
+                          key={project.id}
+                          project={project}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  {hasMoreProjects && (
+                    <div className="flex justify-center pt-3 sm:pt-4">
+                      <Link
+                        href="/projects"
+                        className="inline-flex items-center justify-center gap-1 rounded-full border border-neutral-300 bg-neutral-100 px-4 py-2 text-xs font-medium text-neutral-800 transition-colors hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700 sm:text-sm"
+                      >
+                        View All
+                        <span>→</span>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.05}>
+                <SectionBorder className="" />
+              </Reveal>
+
+              {/* Experience Section */}
+              <Reveal delay={0.1}>
+                <div className="space-y-5 py-7">
+                  <h2 className="text-base sm:text-xl opacity-60 font-[family-name:var(--font-instrument-serif)]">
                     Professional Experience
                   </h2>
                   <div className="">
@@ -93,37 +135,9 @@ export default function NewHeroSection() {
                 <SectionBorder className="" />
               </Reveal>
 
-              {/* Projects / Works */}
+              {/* Services Section */}
               <Reveal delay={0.1}>
-                <div className="space-y-5 py-7">
-                  <h2 className="text-base sm:text-xl opacity-60 font-[family-name:var(--font-instrument-serif)]">
-                    Projects / Works
-                  </h2>
-                  <div className="">
-                    <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
-                      {projects.slice(0, 6).map((project) => (
-                        <MasonryProjectCard
-                          key={project.id}
-                          project={project}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex justify-center pt-3 sm:pt-4">
-                    <Link
-                      href="/projects"
-                      className="inline-flex items-center justify-center gap-1 rounded-full border border-neutral-300 bg-neutral-100 px-4 py-2 text-xs font-medium text-neutral-800 transition-colors hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700 sm:text-sm"
-                    >
-                      View All
-                      <span>→</span>
-                    </Link>
-                  </div>
-
-                  {/* About Me Section */}
-                  <div className="py-7">
-                    <AboutMe />
-                  </div>
-                </div>
+                <ServicesSection />
               </Reveal>
 
               <Reveal delay={0.05}>
@@ -145,19 +159,11 @@ export default function NewHeroSection() {
               <Reveal delay={0.1}>
                 <div className="py-7">
                   <CallToAction />
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.05}>
-                <SectionBorder className="" />
-              </Reveal>
-
-              {/* Reachout Section */}
-              <Reveal delay={0.1}>
-                <div className="">
                   <Reachout
-                    title="Let's connect"
-                    subtitle="Find me on these platforms"
+                    title="Also available on"
+                    subtitle=""
+                    align="center"
+                    socialLinks={secondaryContactLinks}
                   />
                 </div>
               </Reveal>

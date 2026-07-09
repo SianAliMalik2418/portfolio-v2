@@ -1,58 +1,165 @@
-'use client';
+"use client";
 
-import { Project } from '@/types/project'
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa6";
+import { FiArrowUpRight } from "react-icons/fi";
+import { Project } from "@/types/project";
+import { SkillIcon } from "@/components/SkillIcon";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 
 interface MasonryProjectCardProps {
   project: Project;
   className?: string;
 }
 
-export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCardProps) => {
-  return (
-    <Link
-      href={`/projects/${project.id}`}
-      className="group/item block w-full touch-manipulation"
-      style={{
-        WebkitTapHighlightColor: 'transparent',
-        WebkitTouchCallout: 'none',
-        WebkitUserSelect: 'none',
-        userSelect: 'none'
-      }}
-    >
-      <div
-        className={`flex flex-col gap-3 w-full p-1 bg-white dark:bg-white/10 border border-black/10 dark:border-white/5 rounded-[10px] transition-all duration-300 ease-out group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100 group-has-hover:group-hover/item:border-black/20 group-has-hover:group-hover/item:dark:border-white/10 group-has-hover:group-hover/item:scale-[1.02] group-has-hover:group-hover/item:shadow-lg group-has-hover:group-hover/item:shadow-black/5 dark:group-has-hover:group-hover/item:shadow-black/20 ${className}`}
-      >
-        <div className="relative overflow-hidden rounded-md w-full aspect-4/3 bg-black/10 dark:bg-white/10 border border-black/5 dark:border-white/5 transition-all duration-300 group-has-hover:group-hover/item:border-black/10 dark:group-has-hover:group-hover/item:border-white/10">
-          {project.image ? (
-            <Image
-              src={project.image}
-              alt={`${project.title} project cover`}
-              width={1200}
-              height={900}
-              className="rounded-md w-full h-full object-cover transition-transform duration-300 group-has-hover:group-hover/item:scale-105"
-              style={{ color: 'transparent' }}
-              sizes="(max-width: 640px) 384px, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 317px"
-              quality={75}
-              priority
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-600/20 rounded-md transition-transform duration-300 group-has-hover:group-hover/item:scale-105" />
-          )}
-        </div>
+const techIcons: Record<
+  string,
+  { name: string; icon: string; darkIcon?: string }
+> = {
+  Vite: { name: "Vite", icon: "/tech-icons/vite.svg" },
+  TypeScript: { name: "TypeScript", icon: "/tech-icons/typescript.svg" },
+  Express: {
+    name: "Express",
+    icon: "/skills/express.svg",
+    darkIcon: "/skills/express-dark.svg",
+  },
+  MongoDB: { name: "MongoDB", icon: "/tech-icons/mongodb.svg" },
+  RBAC: { name: "RBAC", icon: "/skills/rbac.svg" },
+  "Next.js": {
+    name: "Next.js",
+    icon: "/tech-icons/nextjs.svg",
+    darkIcon: "/tech-icons/nextjs-dark.svg",
+  },
+  PostgreSQL: { name: "PostgreSQL", icon: "/tech-icons/postgresql.svg" },
+  Prisma: {
+    name: "Prisma",
+    icon: "/skills/prisma.svg",
+    darkIcon: "/skills/prisma-dark.svg",
+  },
+  "TanStack Start": { name: "TanStack Start", icon: "/skills/tanstack.svg" },
+  React: { name: "React", icon: "/tech-icons/react.svg" },
+  "Cloudflare Workers": {
+    name: "Cloudflare Workers",
+    icon: "/skills/cloudflare-workers.svg",
+  },
+  R2: { name: "Cloudflare R2", icon: "/skills/cloudflare-workers.svg" },
+  "Tailwind CSS": { name: "Tailwind CSS", icon: "/tech-icons/tailwind.svg" },
+};
 
-        <div className="w-full px-2 pb-4 flex items-center gap-2">
-          {project.isNew && (
-            <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
-              New
-            </span>
+export const MasonryProjectCard = ({
+  project,
+  className = "",
+}: MasonryProjectCardProps) => {
+  const projectTech = project.tags
+    .map((tag) => techIcons[tag])
+    .filter(Boolean);
+
+  return (
+    <article
+      className={`group/item overflow-hidden rounded-[10px] border border-black/10 bg-white p-2 transition-all duration-300 ease-out hover:border-black/20 hover:shadow-lg hover:shadow-black/5 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/20 dark:hover:shadow-black/20 sm:p-3 ${className}`}
+    >
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
+        <Link
+          href={`/projects/${project.id}`}
+          className="block shrink-0 touch-manipulation sm:w-[43%]"
+          style={{
+            WebkitTapHighlightColor: "transparent",
+            WebkitTouchCallout: "none",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+          }}
+        >
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border border-black/5 bg-black/10 transition-all duration-300 group-hover/item:border-black/10 dark:border-white/5 dark:bg-white/10 dark:group-hover/item:border-white/10">
+            {project.image ? (
+              <Image
+                src={project.image}
+                alt={`${project.title} project cover`}
+                width={1200}
+                height={900}
+                className="h-full w-full rounded-md object-cover transition-transform duration-300 group-hover/item:scale-105"
+                sizes="(max-width: 640px) 100vw, 340px"
+                quality={80}
+                priority
+              />
+            ) : (
+              <div className="h-full w-full rounded-md bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-300 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-700" />
+            )}
+          </div>
+        </Link>
+
+        <div className="flex min-w-0 flex-1 flex-col gap-3 px-1 pb-2 sm:px-0 sm:pb-0">
+          <div className="flex items-start justify-between gap-3">
+            <Link
+              href={`/projects/${project.id}`}
+              className="min-w-0 text-xl font-semibold leading-tight text-black transition-colors hover:text-black/70 dark:text-white dark:hover:text-white/75"
+            >
+              {project.title}
+            </Link>
+
+            <div className="flex shrink-0 items-center gap-2">
+              {project.liveLink && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-black/15 bg-black/[0.04] text-black/75 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/15"
+                      aria-label={`View ${project.title} live`}
+                    >
+                      <FiArrowUpRight className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>Live</TooltipContent>
+                </Tooltip>
+              )}
+
+              {project.githubLink && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-black/15 bg-black/[0.04] text-black/75 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/15"
+                      aria-label={`View ${project.title} on GitHub`}
+                    >
+                      <FaGithub className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>GitHub</TooltipContent>
+                </Tooltip>
+              )}
+            </div>
+          </div>
+
+          <p className="text-sm leading-6 text-black/55 dark:text-white/50 sm:text-base">
+            {project.description}
+          </p>
+
+          {projectTech.length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-1">
+              {projectTech.map((tech) => (
+                <Tooltip key={tech.name}>
+                  <TooltipTrigger asChild>
+                    <div className="flex size-9 items-center justify-center rounded-md border border-black/10 bg-black/[0.03] transition-colors hover:bg-black/[0.07] dark:border-white/10 dark:bg-white/[0.06] dark:hover:bg-white/[0.1]">
+                      <SkillIcon
+                        skill={tech}
+                        width={22}
+                        height={22}
+                        className="size-5"
+                        imageClassName="h-full w-full"
+                      />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>{tech.name}</TooltipContent>
+                </Tooltip>
+              ))}
+            </div>
           )}
-          <span className="text-[15px] leading-7 text-black/80 group-has-hover:hover:text-black dark:text-white/80 dark:group-has-hover:hover:text-white font-medium transition-colors duration-300">
-            {project.title}
-          </span>
         </div>
       </div>
-    </Link>
+    </article>
   );
 };

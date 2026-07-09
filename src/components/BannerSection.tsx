@@ -7,11 +7,11 @@ import { ShimmeringText } from './shimmering-text'
 export default function BannerSection() {
   const quotes = useMemo(
     () => [
-      'Turning product ideas into polished full-stack applications.',
-      'Building reliable web products for teams that need to move fast.',
-      'From landing pages to dashboards, I build products that work.',
-      'Clean interfaces, reliable APIs, and products ready for real users.',
-      'Shipping practical web solutions from concept to launch.',
+      'I own the full stack — from database schema to deployed UI.',
+      '10+ client projects shipped: dashboards, auth, payments, and analytics.',
+      'I leverage AI agents to move faster without cutting corners on quality.',
+      'Code should be easy to change six months later. That\'s how I build.',
+      'Currently open for freelance. Fast to start, careful to finish.',
     ],
     []
   )
@@ -20,7 +20,7 @@ export default function BannerSection() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setQuoteIndex((current) => (current + 1) % quotes.length)
-    }, 3500)
+    }, 5500)
 
     return () => window.clearInterval(interval)
   }, [quotes.length])

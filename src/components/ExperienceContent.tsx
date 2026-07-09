@@ -23,9 +23,17 @@ export default function ExperienceContent() {
 
   return (
     <div className="space-y-4 dark:text-white/70 text-black/70">
-      {experiences.map((exp) => {
-        const isExpanded = expanded[exp.company];
+      {experiences.map((exp, expIndex) => {
+        const isFirstExperience = expIndex === 0;
+        const isExpanded = isFirstExperience || expanded[exp.company];
         const isCurrentRole = exp.duration.toLowerCase().includes("present");
+        const visibleAchievements = isFirstExperience
+          ? (exp.achievements ?? [])
+          : (exp.achievements?.slice(0, 3) ?? []);
+        const hiddenAchievements = isFirstExperience
+          ? []
+          : (exp.achievements?.slice(3) ?? []);
+        const hasHiddenAchievements = hiddenAchievements.length > 0;
 
         return (
           <div key={exp.company} className="rounded-lg">
@@ -83,7 +91,7 @@ export default function ExperienceContent() {
                   </p>
                 </div>
 
-                {exp.achievements && exp.achievements.length > 0 && (
+                {hasHiddenAchievements && (
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button
@@ -107,7 +115,20 @@ export default function ExperienceContent() {
               </div>
             </div>
 
-            {exp.achievements && exp.achievements.length > 0 && (
+            {visibleAchievements.length > 0 && (
+              <div className="mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+                <ul className="space-y-2.5 text-sm sm:text-base opacity-80">
+                  {visibleAchievements.map((achievement, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="text-[#006FEE]">•</span>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {hasHiddenAchievements && (
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   isExpanded
@@ -115,11 +136,11 @@ export default function ExperienceContent() {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">
-                  <ul className="space-y-2.5 text-xs sm:text-sm opacity-80">
-                    {exp.achievements.map((achievement, idx) => (
-                      <li key={idx} className="space-x-2">
-                        <span className="text-[#006FEE] mb-10 ">•</span>
+                <div className="pt-2">
+                  <ul className="space-y-2.5 text-sm sm:text-base opacity-80">
+                    {hiddenAchievements.map((achievement, idx) => (
+                      <li key={idx} className="flex gap-2">
+                        <span className="text-[#006FEE]">•</span>
                         <span>{achievement}</span>
                       </li>
                     ))}

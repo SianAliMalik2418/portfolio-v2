@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
