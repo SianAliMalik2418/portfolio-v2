@@ -27,7 +27,7 @@ export default function BannerSection() {
 
   return (
     <div className="w-full mb-2 relative">
-      <div className="flex h-[200px] min-h-[100px] w-full items-center justify-center bg-white px-4 text-black dark:bg-black dark:text-white sm:h-[270px]">
+      <div className="flex h-[200px] min-h-[100px] w-full items-center justify-center overflow-hidden rounded-sm bg-white px-4 text-black dark:bg-black dark:text-white sm:h-[270px]">
         <div className="grid min-h-20 place-items-center overflow-hidden text-center text-base italic font-[family-name:var(--font-instrument-serif)] sm:min-h-24 sm:text-xl">
           <AnimatePresence mode="wait">
             <motion.p

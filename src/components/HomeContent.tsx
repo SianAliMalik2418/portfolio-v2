@@ -12,6 +12,7 @@ import Reachout from "./Reachout";
 import CallToAction from "./CallToAction";
 import TechStackMarquee from "./TechStackMarquee";
 import ServicesSection from "./ServicesSection";
+import TestimonialsSection from "./TestimonialsSection";
 import { Reveal } from "./Reveal";
 import { projects } from "@/data/projects";
 import { MasonryProjectCard } from "./MasonryProjectCard";
@@ -28,16 +29,16 @@ export default function NewHeroSection() {
 
   return (
     <div
-      className="min-h-screen transition-colors duration-300 relative"
+      className="min-h-screen transition-colors duration-300 relative overflow-x-hidden"
       style={{ fontFamily: "var(--font-hk-grotesk)" }}
     >
-      <div className="relative mx-auto max-w-4xl">
+      <div className="relative mx-auto max-w-4xl overflow-x-hidden">
         {/* Diagonal Patterns */}
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />
 
         {/* Main Content */}
-        <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl  flex flex-col gap-5 px-8">
+        <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl flex flex-col gap-5 px-5 sm:px-8">
           {/* Banner Section */}
           <Reveal delay={0.1}>
             <BannerSection />
@@ -88,7 +89,7 @@ export default function NewHeroSection() {
               {/* Projects / Works */}
               <Reveal delay={0.1}>
                 <div className="space-y-5 py-7">
-                  <h2 className="text-base sm:text-xl opacity-60  font-[family-name:var(--font-instrument-serif)]">
+                  <h2 className="text-base sm:text-xl opacity-90 font-medium font-[family-name:var(--font-instrument-serif)]">
                     Featured Projects
                   </h2>
                   <div className="">
@@ -122,7 +123,7 @@ export default function NewHeroSection() {
               {/* Experience Section */}
               <Reveal delay={0.1}>
                 <div className="space-y-5 py-7">
-                  <h2 className="text-base sm:text-xl opacity-60 font-[family-name:var(--font-instrument-serif)]">
+                  <h2 className="text-base sm:text-xl opacity-90 font-medium font-[family-name:var(--font-instrument-serif)]">
                     Professional Experience
                   </h2>
                   <div className="">
@@ -149,6 +150,15 @@ export default function NewHeroSection() {
                 <div className="py-7">
                   <TechStackMarquee className="w-full" />
                 </div>
+              </Reveal>
+
+              <Reveal delay={0.05}>
+                <SectionBorder className="" />
+              </Reveal>
+
+              {/* Testimonials Section */}
+              <Reveal delay={0.1}>
+                <TestimonialsSection />
               </Reveal>
 
               <Reveal delay={0.05}>

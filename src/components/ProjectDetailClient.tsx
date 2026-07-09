@@ -32,7 +32,12 @@ export default function ProjectDetailClient({
                 <div className="sm:px-12 py-2">
                   <div className="px-4 mb-4 sm:mb-6 pt-4 sm:pt-6">
                     <div className="mb-4 sm:mb-6">
-                      <PageNavigation />
+                      <PageNavigation
+                      breadcrumbs={[
+                        { label: 'Projects', href: '/projects' },
+                        { label: project.title },
+                      ]}
+                    />
                     </div>
                   </div>
                 </div>

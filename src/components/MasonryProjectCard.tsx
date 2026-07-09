@@ -6,7 +6,11 @@ import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Project } from "@/types/project";
 import { SkillIcon } from "@/components/SkillIcon";
-import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 
 interface MasonryProjectCardProps {
   project: Project;
@@ -25,7 +29,6 @@ const techIcons: Record<
     darkIcon: "/skills/express-dark.svg",
   },
   MongoDB: { name: "MongoDB", icon: "/tech-icons/mongodb.svg" },
-  RBAC: { name: "RBAC", icon: "/skills/rbac.svg" },
   "Next.js": {
     name: "Next.js",
     icon: "/tech-icons/nextjs.svg",
@@ -51,9 +54,7 @@ export const MasonryProjectCard = ({
   project,
   className = "",
 }: MasonryProjectCardProps) => {
-  const projectTech = project.tags
-    .map((tag) => techIcons[tag])
-    .filter(Boolean);
+  const projectTech = project.tags.map((tag) => techIcons[tag]).filter(Boolean);
 
   return (
     <article
@@ -92,12 +93,12 @@ export const MasonryProjectCard = ({
           <div className="flex items-start justify-between gap-3">
             <Link
               href={`/projects/${project.id}`}
-              className="min-w-0 text-xl font-semibold leading-tight text-black transition-colors hover:text-black/70 dark:text-white dark:hover:text-white/75"
+              className="min-w-0 text-base sm:text-xl font-semibold leading-tight text-black transition-colors hover:text-black/70 dark:text-white dark:hover:text-white/75"
             >
               {project.title}
             </Link>
 
-            <div className="flex shrink-0 items-center gap-2">
+            <div className="flex shrink-0 items-center mb-1 gap-2">
               {project.liveLink && (
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -105,7 +106,7 @@ export const MasonryProjectCard = ({
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-black/15 bg-black/[0.04] text-black/75 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/15"
+                      className="inline-flex h-7 w-7  sm:h-8 sm:w-8 items-center justify-center rounded-md border border-black/15 bg-black/[0.04] text-black/75 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/15"
                       aria-label={`View ${project.title} live`}
                     >
                       <FiArrowUpRight className="size-4" />
@@ -122,7 +123,7 @@ export const MasonryProjectCard = ({
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-black/15 bg-black/[0.04] text-black/75 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/15"
+                      className="inline-flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-md border border-black/15 bg-black/[0.04] text-black/75 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/15"
                       aria-label={`View ${project.title} on GitHub`}
                     >
                       <FaGithub className="size-4" />
@@ -138,26 +139,38 @@ export const MasonryProjectCard = ({
             {project.description}
           </p>
 
-          {projectTech.length > 0 && (
-            <div className="flex flex-wrap gap-2 pt-1">
-              {projectTech.map((tech) => (
-                <Tooltip key={tech.name}>
-                  <TooltipTrigger asChild>
-                    <div className="flex size-9 items-center justify-center rounded-md border border-black/10 bg-black/[0.03] transition-colors hover:bg-black/[0.07] dark:border-white/10 dark:bg-white/[0.06] dark:hover:bg-white/[0.1]">
-                      <SkillIcon
-                        skill={tech}
-                        width={22}
-                        height={22}
-                        className="size-5"
-                        imageClassName="h-full w-full"
-                      />
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>{tech.name}</TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          )}
+          <div className="flex items-end justify-between gap-3 pt-1">
+            {projectTech.length > 0 && (
+              <div className="grid grid-cols-4 gap-2">
+                {projectTech.map((tech) => (
+                  <Tooltip key={tech.name}>
+                    <TooltipTrigger asChild>
+                      <div className="flex size-9 items-center justify-center rounded-md border border-black/10 bg-black/[0.03] transition-colors hover:bg-black/[0.07] dark:border-white/10 dark:bg-white/[0.06] dark:hover:bg-white/[0.1]">
+                        <SkillIcon
+                          skill={tech}
+                          width={22}
+                          height={22}
+                          className="size-5"
+                          imageClassName="h-full w-full"
+                        />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>{tech.name}</TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
+            )}
+
+            <Link
+              href={`/projects/${project.id}`}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-black/12 bg-black/[0.04] px-3 py-1.5 text-xs font-medium text-black/70 transition-all hover:bg-black/[0.08] dark:border-white/12 dark:bg-white/[0.06] dark:text-white/70 dark:hover:bg-white/[0.12]"
+            >
+              View case study
+              <span className="transition-transform duration-200 group-hover/item:translate-x-0.5">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </article>

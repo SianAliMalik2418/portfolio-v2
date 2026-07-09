@@ -56,7 +56,7 @@ export default function Reachout({
                   userSelect: "none",
                 }}
               >
-                <FaGithub className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <FaGithub className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
                 <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
                   GitHub
                 </span>
@@ -78,7 +78,7 @@ export default function Reachout({
                   userSelect: "none",
                 }}
               >
-                <FaXTwitter className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <FaXTwitter className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
                 <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
                   Twitter
                 </span>
@@ -100,7 +100,7 @@ export default function Reachout({
                   userSelect: "none",
                 }}
               >
-                <FaLinkedin className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <FaLinkedin className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
                 <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
                   LinkedIn
                 </span>
@@ -122,7 +122,7 @@ export default function Reachout({
                   userSelect: "none",
                 }}
               >
-                <IoMdMail className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <IoMdMail className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
                 <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
                   Mail
                 </span>
@@ -144,7 +144,7 @@ export default function Reachout({
                   userSelect: "none",
                 }}
               >
-                <FaPaperclip className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <FaPaperclip className="text-[18px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
                 <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">
                   Resume
                 </span>

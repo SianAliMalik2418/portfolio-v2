@@ -1,40 +1,71 @@
 "use client";
 
-import { Marquee } from "@/components/magicui/marquee";
-import { skills } from "@/data/skills";
 import { SkillIcon } from "@/components/SkillIcon";
+import type { Skill } from "@/data/skills";
 
-interface TechIconProps {
-  tech: (typeof skills)[0];
-  className?: string;
-}
+type StackItem = Pick<Skill, "name" | "icon" | "darkIcon">;
 
-function TechIcon({ tech, className = "" }: TechIconProps) {
-  return (
-    <div
-      className={`flex flex-col items-center justify-center p-2 sm:p-3 transition-all duration-300 hover:scale-105 min-w-[80px] sm:min-w-[90px] group/tech ${className}`}
-    >
-      {/* Icon Container */}
-      <div className="relative w-8 h-8 sm:w-10 sm:h-10 mb-1.5 sm:mb-2 flex items-center justify-center">
-        {/* Try to load actual SVG, fallback to grey placeholder */}
-        <div className="w-full h-full relative">
-          <SkillIcon
-            skill={tech}
-            width={40}
-            height={40}
-            className="w-full h-full"
-            imageClassName="w-full h-full grayscale opacity-70 transition-all duration-300 group-hover/tech:grayscale-0 group-hover/tech:opacity-100"
-          />
-        </div>
-      </div>
+type StackGroup = {
+  label: string;
+  items: StackItem[];
+};
 
-      {/* Tech Name */}
-      <span className="text-[10px] sm:text-xs text-center font-medium text-gray-700 dark:text-gray-300 leading-tight group-hover/tech:text-gray-900 dark:group-hover/tech:text-white transition-colors">
-        {tech.name}
-      </span>
-    </div>
-  );
-}
+const stackGroups: StackGroup[] = [
+  {
+    label: "Language",
+    items: [
+      { name: "TypeScript", icon: "/tech-icons/typescript.svg" },
+      { name: "JavaScript", icon: "/tech-icons/javascript.svg" },
+    ],
+  },
+  {
+    label: "Frontend",
+    items: [
+      { name: "React", icon: "/tech-icons/react.svg" },
+      {
+        name: "Next.js",
+        icon: "/tech-icons/nextjs.svg",
+        darkIcon: "/tech-icons/nextjs-dark.svg",
+      },
+      { name: "TanStack Start", icon: "/skills/tanstack.svg" },
+      { name: "Tailwind CSS", icon: "/tech-icons/tailwind.svg" },
+      {
+        name: "Shadcn UI",
+        icon: "/skills/shadcn-ui.svg",
+        darkIcon: "/skills/shadcn-ui-dark.svg",
+      },
+      { name: "Framer Motion", icon: "/skills/framer.svg", darkIcon: "/skills/framer-dark.svg" },
+    ],
+  },
+  {
+    label: "Backend & Database",
+    items: [
+      { name: "Node.js", icon: "/tech-icons/nodejs.svg" },
+      { name: "Express", icon: "/skills/express.svg", darkIcon: "/skills/express-dark.svg" },
+      { name: "MongoDB", icon: "/tech-icons/mongodb.svg" },
+      { name: "PostgreSQL", icon: "/tech-icons/postgresql.svg" },
+      { name: "Prisma", icon: "/skills/prisma.svg", darkIcon: "/skills/prisma-dark.svg" },
+      { name: "Drizzle", icon: "/skills/drizzle.svg", darkIcon: "/skills/drizzle-dark.svg" },
+    ],
+  },
+  {
+    label: "Workflow & Cloud",
+    items: [
+      { name: "Git", icon: "/tech-icons/Git.svg" },
+      { name: "AWS EC2", icon: "/tech-icons/AWS.svg" },
+      { name: "DigitalOcean", icon: "/tech-icons/digitalocean.svg" },
+      { name: "Cloudflare Workers", icon: "/skills/cloudflare-workers.svg" },
+    ],
+  },
+  {
+    label: "Libraries",
+    items: [
+      { name: "Zod", icon: "/skills/zod.svg" },
+      { name: "React Hook Form", icon: "/skills/react.svg" },
+      { name: "TanStack Query", icon: "/skills/tanstack.svg" },
+    ],
+  },
+];
 
 interface TechStackMarqueeProps {
   className?: string;
@@ -45,28 +76,48 @@ export default function TechStackMarquee({
 }: TechStackMarqueeProps) {
   return (
     <div className={`w-full ${className}`}>
-      {/* Title - matching other component styles */}
       <div className="mb-4">
-        <h2 className="text-base font-[family-name:var(--font-instrument-serif)] sm:text-xl opacity-60 -tracking-[0.01em]">
+        <h2 className="text-base font-medium font-[family-name:var(--font-instrument-serif)] sm:text-xl opacity-90 -tracking-[0.01em]">
           Stack I use
         </h2>
-        <p className="text-sm sm:text-base dark:text-white/70 text-black/70 leading-relaxed">
+        <p className="mt-2 text-sm sm:text-base text-black/55 dark:text-white/50">
           Technologies I use to build full-stack products and production
           workflows
         </p>
       </div>
 
-      {/* Single Marquee Container */}
-      <div className="relative">
-        <Marquee pauseOnHover className="[--duration:80s] [--gap:1rem]">
-          {skills.map((tech, index) => (
-            <TechIcon key={`${tech.name}-${index}`} tech={tech} />
-          ))}
-        </Marquee>
+      <div className="overflow-hidden rounded-[10px] border border-black/10 dark:border-white/10">
+        {stackGroups.map((group, index) => (
+          <div
+            key={group.label}
+            className="grid gap-3 border-b border-black/10 px-4 py-4 last:border-b-0 dark:border-white/10 sm:grid-cols-[170px_1fr] sm:gap-5 sm:px-5"
+          >
+            <div className="flex items-center gap-2 text-sm text-black/45 dark:text-white/40 sm:text-base">
+              <span className="font-mono text-black/35 dark:text-white/30">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span>{group.label}</span>
+            </div>
 
-        {/* Fade edges for better visual effect */}
-        <div className="absolute left-0 top-0 w-20 h-full bg-linear-to-r from-white dark:from-zinc-900 to-transparent pointer-events-none z-10" />
-        <div className="absolute right-0 top-0 w-20 h-full bg-linear-to-l from-white dark:from-zinc-900 to-transparent pointer-events-none z-10" />
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="group/stack inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-black/10 bg-black/[0.03] px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm text-black/75 transition-colors hover:bg-black/[0.07] dark:border-white/10 dark:bg-white/[0.06] dark:text-white/80 dark:hover:bg-white/[0.1]"
+                >
+                  <SkillIcon
+                    skill={skill}
+                    width={16}
+                    height={16}
+                    className="size-3.5 sm:size-4"
+                    imageClassName="h-full w-full grayscale opacity-70 transition-all duration-300 group-hover/stack:grayscale-0 group-hover/stack:opacity-100"
+                  />
+                  <span>{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

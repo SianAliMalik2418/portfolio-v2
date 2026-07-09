@@ -61,11 +61,11 @@ export default function ProfileHeader({
         </div>
 
         {/*Social Links*/}
-        <div className="flex justify-start gap-1 sm:gap-2">
+        <div className="flex justify-start gap-1 sm:gap-2 mt-3 sm:mt-0">
           {socialLinks.github && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
                   <a
                     className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
                     href={socialLinks.github}
@@ -78,7 +78,7 @@ export default function ProfileHeader({
                       userSelect: "none",
                     }}
                   >
-                    <FaGithub className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                    <FaGithub className="text-[13px] sm:text-[16px] text-black/75 dark:text-white/80" />
                   </a>
                 </div>
               </TooltipTrigger>
@@ -88,7 +88,7 @@ export default function ProfileHeader({
           {socialLinks.twitter && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
                   <a
                     className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
                     href={socialLinks.twitter}
@@ -101,7 +101,7 @@ export default function ProfileHeader({
                       userSelect: "none",
                     }}
                   >
-                    <FaXTwitter className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                    <FaXTwitter className="text-[13px] sm:text-[16px] text-black/75 dark:text-white/80" />
                   </a>
                 </div>
               </TooltipTrigger>
@@ -111,7 +111,7 @@ export default function ProfileHeader({
           {socialLinks.resume && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
                   <a
                     className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
                     href={socialLinks.resume}
@@ -124,7 +124,7 @@ export default function ProfileHeader({
                       userSelect: "none",
                     }}
                   >
-                    <FaPaperclip className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                    <FaPaperclip className="text-[13px] sm:text-[16px] text-black/75 dark:text-white/80" />
                   </a>
                 </div>
               </TooltipTrigger>
@@ -134,7 +134,7 @@ export default function ProfileHeader({
           {socialLinks.linkedin && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
                   <a
                     className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
                     href={socialLinks.linkedin}
@@ -147,7 +147,7 @@ export default function ProfileHeader({
                       userSelect: "none",
                     }}
                   >
-                    <FaLinkedin className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                    <FaLinkedin className="text-[13px] sm:text-[16px] text-black/75 dark:text-white/80" />
                   </a>
                 </div>
               </TooltipTrigger>
@@ -157,7 +157,7 @@ export default function ProfileHeader({
           {mounted && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
                   <button
                     onClick={() => {
                       const newTheme = theme === "light" ? "dark" : "light";
@@ -190,9 +190,9 @@ export default function ProfileHeader({
                     }}
                   >
                     {theme === "light" ? (
-                      <Moon className="size-[14px] -mt-px" aria-hidden="true" />
+                      <Moon className="size-[12px] sm:size-[14px] -mt-px" aria-hidden="true" />
                     ) : (
-                      <Sun className="size-[14px] -mt-px" aria-hidden="true" />
+                      <Sun className="size-[12px] sm:size-[14px] -mt-px" aria-hidden="true" />
                     )}
                   </button>
                 </div>

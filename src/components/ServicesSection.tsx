@@ -13,7 +13,7 @@ export default function ServicesSection() {
   return (
     <div className="space-y-5 py-7">
       <div>
-        <h2 className="text-base sm:text-xl opacity-60 font-[family-name:var(--font-instrument-serif)]">
+        <h2 className="text-base sm:text-xl opacity-90 font-medium font-[family-name:var(--font-instrument-serif)]">
           I can help with
         </h2>
         <p className="mt-2 text-sm sm:text-base text-black/55 dark:text-white/50">
