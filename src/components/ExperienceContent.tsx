@@ -37,7 +37,7 @@ export default function ExperienceContent() {
 
         return (
           <div key={exp.company} className="rounded-lg">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
               <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden shrink-0">
                   {exp.logoUrl ? (

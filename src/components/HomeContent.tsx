@@ -72,13 +72,20 @@ export default function NewHeroSection() {
               {/* Bio Section */}
               <Reveal delay={0.1}>
                 <ContentSection className="">
-                  <ContentParagraph className="text-base sm:text-lg">
-                    <span className="font-medium dark:text-white text-black">
-                      Hey there 👋 , my name is Sian and I am a full-stack
-                      engineer,
-                    </span>{" "}
-                    {profileConfig.intro}
-                  </ContentParagraph>
+                  <div className="flex flex-col gap-4">
+                    <ContentParagraph className="text-base sm:text-lg">
+                      <span className="font-medium dark:text-white text-black">
+                        Hey there 👋, my name is Sian
+                      </span>{" "}
+                      and I am a full-stack engineer based in Lahore, Pakistan. I build production-ready web apps, dashboards, and MVPs with Next.js, TypeScript, Node.js, and databases.
+                    </ContentParagraph>
+                    <ContentParagraph className="text-base sm:text-lg">
+                      I can take a product from wireframe to deployed — handling frontend, backend, integrations, auth, payments, and deployment end to end.
+                    </ContentParagraph>
+                    <ContentParagraph className="text-base sm:text-lg">
+                      Currently open to freelance projects. If you have an idea that needs building, let&apos;s talk.
+                    </ContentParagraph>
+                  </div>
                 </ContentSection>
               </Reveal>
 
