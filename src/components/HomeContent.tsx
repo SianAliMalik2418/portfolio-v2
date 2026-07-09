@@ -123,13 +123,6 @@ export default function NewHeroSection() {
                   <div className="py-7">
                     <AboutMe />
                   </div>
-
-                  {/* GitHub Activity Heatmap */}
-                  {/*<div className="">
-                    <GitHubActivity
-                      username={profileConfig.socials.githubUsername}
-                    />
-                  </div>*/}
                 </div>
               </Reveal>
 
